@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electronic_goods.LoginPage"
+            BackgroundColor="#B6B7D0"
+            NavigationPage.HasNavigationBar="False"
+            Visual="Material">
+    <StackLayout>
+        <Label
+            Padding="10,20"
+            FontAttributes="None"
+            FontFamily="MaterialIconsFont"
+            FontSize="43"
+            HorizontalOptions="Start"
+            Text="chevron_left"
+            TextColor="White"
+            VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer x:Name="BackLblTap" Tapped="BackLblTap_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Frame
+            BackgroundColor="White"
+            CornerRadius="20"
+            VerticalOptions="FillAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    x:Name="WelcomeLbl"
+                    Grid.Row="0"
+                    FontFamily="Commissioner"
+                    FontSize="21"
+                    TextColor="Black"
+                    VerticalOptions="End" />
+
+                <StackLayout
+                    Grid.Row="1"
+                    Spacing="30"
+                    VerticalOptions="CenterAndExpand">
+                    <Entry
+                        x:Name="LoginLbl"
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Login"
+                        PlaceholderColor="#B2B2B2"
+                        VerticalOptions="CenterAndExpand" />
+                    <Entry
+                        x:Name="PassLbl"
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        PlaceholderColor="#B2B2B2"
+                        VerticalOptions="CenterAndExpand" />
+                    <Button
+                        x:Name="LoginBtn"
+                        Grid.Row="1"
+                        Padding="40,13"
+                        BackgroundColor="#FCC046"
+                        Clicked="LoginBtn_Clicked"
+                        CornerRadius="10"
+                        FontSize="16"
+                        HorizontalOptions="Start"
+                        Text="Login"
+                        TextColor="White"
+                        TextTransform="None"
+                        VerticalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <Label
+                    Grid.Row="2"
+                    BackgroundColor="white"
+                    FontFamily="Commissioner"
+                    FontSize="13"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Чтобы продолжить войдите в учетную запись"
+                    TextColor="#CDCDCD"
+                    VerticalOptions="EndAndExpand" />
+            </Grid>
+
+        </Frame>
+    </StackLayout>
+</ContentPage>

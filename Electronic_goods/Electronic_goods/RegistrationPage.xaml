@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electronic_goods.RegistrationPage"
+            BackgroundColor="#B6B7D0"
+             BackgroundImageSource="image.png"
+            NavigationPage.HasNavigationBar="False"
+            Visual="Material">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label
+                Padding="10,20"
+                FontAttributes="None"
+                FontFamily="MaterialIconsFont"
+                FontSize="43"
+                HorizontalOptions="Start"
+                Text="&#xe317;"
+                TextColor="White"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="BackLbl" Tapped="BackLbl_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Margin="0,0,43,0"
+                FontSize="24"
+                HorizontalOptions="CenterAndExpand"
+                Text="Registration"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+        <Frame
+            Margin="40,0,40,0"
+            BackgroundColor="White"
+            CornerRadius="20"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                Padding="10,0"
+                Spacing="20"
+                VerticalOptions="CenterAndExpand">
+                <Frame Padding="0" IsClippedToBounds="True">
+                    <Entry
+                        x:Name="FIOEntry"
+                        BackgroundColor="White"
+                        Placeholder="ФИО"
+                        PlaceholderColor="#ACACAC" />
+                </Frame>
+                <Frame Padding="0" IsClippedToBounds="True">
+                    <Entry
+                        x:Name="TelNumberEntry"
+                        BackgroundColor="White"
+                        Keyboard="Telephone"
+                        Placeholder="Номер телефона"
+                        PlaceholderColor="#ACACAC" />
+                </Frame>
+                <Frame Padding="0" IsClippedToBounds="True">
+                    <Entry
+                        x:Name="EmailEntry"
+                        BackgroundColor="White"
+                        Keyboard="Email"
+                        Placeholder="E-mail"
+                        PlaceholderColor="#ACACAC" />
+                </Frame>
+                <Frame Padding="0" IsClippedToBounds="True">
+                    <Entry
+                        x:Name="LoginEntry"
+                        BackgroundColor="White"
+                        Placeholder="Login"
+                        PlaceholderColor="#ACACAC" />
+                </Frame>
+                <Frame Padding="0" IsClippedToBounds="True">
+                    <Entry
+                        x:Name="PassEntry"
+                        BackgroundColor="White"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        PlaceholderColor="#ACACAC" />
+                </Frame>
+            </StackLayout>
+        </Frame>
+        <Button
+            x:Name="RegistrateBtn"
+            Margin="0,0,0,20"
+            Padding="20,10"
+            BackgroundColor="#33344F"
+            Clicked="RegistrateBtn_Clicked"
+            CornerRadius="20"
+            FontSize="18"
+            HorizontalOptions="CenterAndExpand"
+            Text="Registration"
+            TextTransform="None"
+            VerticalOptions="EndAndExpand" />
+    </StackLayout>
+</ContentPage>
