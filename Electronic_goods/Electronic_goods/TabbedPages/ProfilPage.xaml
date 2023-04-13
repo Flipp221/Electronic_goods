@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electronic_goods.TabbedPages.ProfilPage"
+             BackgroundColor="#F4F4FF">
+    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+        <StackLayout BackgroundColor="#FCC046" VerticalOptions="StartAndExpand">
+            <Label
+                Padding="15"
+                FontSize="18"
+                HorizontalOptions="CenterAndExpand"
+                Text="Личный кабинет"
+                TextColor="White" />
+            <StackLayout Padding="40,20,0,40" Orientation="Horizontal">
+                <ImageButton
+                    x:Name="img"
+                    Margin="0,0,20,0"
+                    Aspect="AspectFill"
+                    Clicked="ImageButton_Clicked"
+                    CornerRadius="50"
+                    HeightRequest="90"
+                    WidthRequest="90" />
+                <Label
+                    x:Name="AccountInfoLbl"
+                    Margin="0,20,0,0"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    Text="{Binding Name}"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout>
+            <StackLayout
+                Margin="0"
+                Padding="10"
+                BackgroundColor="White"
+                Orientation="Horizontal">
+                <Label
+                    FontFamily="MaterialIconsFont"
+                    FontSize="28"
+                    HorizontalOptions="Start"
+                    Text="&#xe0b7;"
+                    TextColor="#ADA7A7"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    BackgroundColor="White"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Предложения для улучшения"
+                    TextColor="#ADA7A7"
+                    VerticalOptions="CenterAndExpand" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout
+                Margin="0"
+                Padding="10"
+                BackgroundColor="White"
+                Orientation="Horizontal">
+                <Label
+                    FontFamily="MaterialIconsFont"
+                    FontSize="28"
+                    HorizontalOptions="Start"
+                    Text="&#xe0ca;"
+                    TextColor="#ADA7A7"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    BackgroundColor="White"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Отзывы"
+                    TextColor="#ADA7A7"
+                    VerticalOptions="CenterAndExpand" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electronic_goods.Pages.OfferPage"
+                 BackgroundColor="#F4F4FF"
+    NavigationPage.HasNavigationBar="False"
+    Visual="Material">
+    <StackLayout>
+        <StackLayout BackgroundColor="White" Orientation="Horizontal">
+            <Label
+                Padding="10,20"
+                FontAttributes="None"
+                FontFamily="MaterialIconsFont"
+                FontSize="43"
+                HorizontalOptions="Start"
+                Text="chevron_left"
+                TextColor="Gray"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Margin="10,20"
+                FontSize="20"
+                Text="Предложения для улучшения"
+                TextColor="Gray" />
+        </StackLayout>
+        <StackLayout>
+            <ListView
+                x:Name="SuggestionsLst"
+                HasUnevenRows="True"
+                HorizontalOptions="StartAndExpand"
+                IsPullToRefreshEnabled="True"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Frame CornerRadius="20">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image
+                                            HeightRequest="100"
+                                            Source="profiljpg.jpg"
+                                            WidthRequest="100" />
+                                        <StackLayout>
+                                            <Label
+                                                FontSize="15"
+                                                Text="{Binding Review}"
+                                                TextColor="#9A9A9A" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout
+            Padding="30"
+            BackgroundColor="White"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal">
+            <Label Text="Есть предложения по улучшению? Тогда напиши его!" />
+            <Button
+                Margin="10"
+                BackgroundColor="#F06B6D"
+                Clicked="Button_Clicked"
+                HorizontalOptions="EndAndExpand"
+                Text="Написать"
+                TextColor="White" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

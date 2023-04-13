@@ -58,5 +58,3 @@ namespace Electronic_goods
         }
     }
 }
-
-}

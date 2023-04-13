@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Electronic_goods.Pages
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class OfferFormPage : ContentPage
+    {
+        public OfferFormPage()
+        {
+            InitializeComponent();
+            FIOLbl.Text = $"{App.client.Surname} {App.client.Name} {App.client.Patronymic}";
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        private async void OfferBtn_Clicked(object sender, EventArgs e)
+        {
+            if (AnonimCheck.IsChecked)
+                App.Db.SaveImprove(new Models.ImproveOffer(App.client.Id, TextOffer.Text));
+            else
+                App.Db.SaveImprove(new Models.ImproveOffer(App.client.Id, TextOffer.Text));
+            await Navigation.PopAsync();
+        }
+    }
+}
