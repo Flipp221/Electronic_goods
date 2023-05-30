@@ -10,7 +10,7 @@ namespace Electronic_goods
 {
     public partial class App : Application
     {
-        public const string DB_NAME = "FurnitureStore.db";
+        public const string DB_NAME = "ElectrStore.db";
         public static CRUDOperation db;
         public static Client client;
         public static string[] colors = new string[4] { "Белый", "Чёрный", "Синий", "Красный" };

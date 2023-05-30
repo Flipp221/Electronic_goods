@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Electronic_goods.Pages.AddFurniturePage"
-                 BackgroundImageSource="image.png"
+             x:Class="Electronic_goods.Pages.AddTovarsPage"
+                BackgroundImageSource="image.png"
                 NavigationPage.HasNavigationBar="False">
     <ScrollView>
         <StackLayout>
@@ -41,21 +41,21 @@
                     VerticalOptions="CenterAndExpand">
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Entry
-                            x:Name="NameFurniture"
+                            x:Name="NameTovar"
                             BackgroundColor="White"
                             Placeholder="Название товара"
                             PlaceholderColor="#ACACAC" />
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Entry
-                            x:Name="DescriptionFurniture"
+                            x:Name="DescriptionTovar"
                             BackgroundColor="White"
                             Placeholder="Описание"
                             PlaceholderColor="#ACACAC" />
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Entry
-                            x:Name="PriceFurniture"
+                            x:Name="PriceTovar"
                             BackgroundColor="White"
                             Keyboard="Numeric"
                             Placeholder="Цена"
@@ -63,21 +63,21 @@
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Picker
-                            x:Name="TypeFurniture"
+                            x:Name="TypeTovar"
                             Title="Тип товара"
                             BackgroundColor="White"
                             TitleColor="#ACACAC" />
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Picker
-                            x:Name="ColorFurniture"
+                            x:Name="ColorTovar"
                             Title="Цвет товара"
                             BackgroundColor="White"
                             TitleColor="#ACACAC" />
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Picker
-                            x:Name="MaterialFurniture"
+                            x:Name="MaterialTovar"
                             Title="Материал"
                             BackgroundColor="White"
                             TitleColor="#ACACAC" />

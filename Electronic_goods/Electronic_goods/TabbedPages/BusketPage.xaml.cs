@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +13,7 @@ namespace Electronic_goods.TabbedPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BusketPage : ContentPage
     {
-        List<Furniture> aa = new List<Furniture>();
+        List<Tovars> aa = new List<Tovars>();
         int price = 0;
         public BusketPage()
         {
@@ -31,7 +30,7 @@ namespace Electronic_goods.TabbedPages
         }
         void UpdateList()
         {
-            aa = new List<Furniture>();
+            aa = new List<Tovars>();
             price = 0;
             BusketLst.ItemsSource = null;
             var a = App.Db.GetBasket();
@@ -39,8 +38,8 @@ namespace Electronic_goods.TabbedPages
             {
                 if (App.client.Id == item.ClientId)
                 {
-                    aa.Add(App.Db.GetProjectItem(item.FurnitureId));
-                    price += int.Parse(App.Db.GetProjectItem(item.FurnitureId).Price);
+                    aa.Add(App.Db.GetProjectItem(item.TovarsId));
+                    price += int.Parse(App.Db.GetProjectItem(item.TovarsId).Price);
                 }
             }
             BusketLst.ItemsSource = aa;
@@ -57,7 +56,7 @@ namespace Electronic_goods.TabbedPages
 
                 foreach (var item in fre)
                 {
-                    if (item.FurnitureId == int.Parse(id))
+                    if (item.TovarsId == int.Parse(id))
                     {
                         App.Db.DeleteFurnitureInBusket(item.Id);
                         break;

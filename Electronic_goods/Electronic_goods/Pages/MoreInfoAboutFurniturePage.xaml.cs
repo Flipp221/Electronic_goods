@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Electronic_goods.TabbedPages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,10 +13,10 @@ namespace Electronic_goods.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MoreInfoAboutFurniturePage : ContentPage
     {
-        Furniture furniture;
-        public MoreInfoAboutFurniturePage(Furniture fur)
+        Tovars tovars;
+        public MoreInfoAboutFurniturePage(Tovars tov)
         {
-            furniture = fur;
+            tovars = tov;
             InitializeComponent();
         }
 
@@ -34,7 +34,7 @@ namespace Electronic_goods.Pages
             Clear();
             Btn1.BorderWidth = 2;
             Btn1.BorderColor = Color.Black;
-            furniture.Color = App.colors[0];
+            tovars.Color = App.colors[0];
         }
 
         private void Btn2_Clicked(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Electronic_goods.Pages
             Clear();
             Btn2.BorderWidth = 2;
             Btn2.BorderColor = Color.Black;
-            furniture.Color = App.colors[1];
+            tovars.Color = App.colors[1];
         }
 
         private void Btn3_Clicked(object sender, EventArgs e)
@@ -50,14 +50,14 @@ namespace Electronic_goods.Pages
             Clear();
             Btn3.BorderWidth = 2;
             Btn3.BorderColor = Color.Black;
-            furniture.Color = App.colors[2];
+            tovars.Color = App.colors[2];
         }
 
         private void Btn4_Clicked(object sender, EventArgs e)
         {
             Clear();
             Btn4.BorderWidth = 2;
-            furniture.Color = App.colors[3];
+            tovars.Color = App.colors[3];
             Btn4.BorderColor = Color.Black;
         }
 
@@ -84,8 +84,8 @@ namespace Electronic_goods.Pages
                 material = RBtn3.Content.ToString();
             else if (RBtn4.IsChecked)
                 material = RBtn4.Content.ToString();
-            furniture.Material = material;
-            Busket bk = new Busket(1, App.client.Id, furniture.Id);
+            tovars.Material = material;
+            Busket bk = new Busket(1, App.client.Id, tovars.Id);
             App.Db.SaveBasket(bk);
         }
 
@@ -96,12 +96,14 @@ namespace Electronic_goods.Pages
 
         private async void EditBtn_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddFurniturePage(furniture));
+            await Navigation.PushAsync(new AddTovarsPage(tovars));
         }
 
-        private void deleteBtn_Tapped(object sender, EventArgs e)
+        private async void deleteBtn_Tapped(object sender, EventArgs e)
         {
-            App.Db.DeleteFurniture(furniture.Id);
+            App.Db.DeleteFurniture(tovars.Id);
+            await DisplayAlert("Done", "Товар удалён", "Ok");
+            await Navigation.PopAsync();
         }
     }
 }

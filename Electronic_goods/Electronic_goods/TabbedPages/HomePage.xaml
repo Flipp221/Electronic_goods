@@ -40,7 +40,7 @@
                             x:Name="toolsBtn"
                             BackgroundColor="Transparent"
                             Clicked="toolsBtn_Clicked"
-                            FontSize="12"
+                            FontSize="10"
                             Text="Инструменты"
                             TextColor="#8B8DC0" />
                         <BoxView
@@ -54,7 +54,7 @@
                             x:Name="gadgetsBtn"
                             BackgroundColor="Transparent"
                             Clicked="gadgetsBtn_Clicked"
-                            FontSize="12"
+                            FontSize="10"
                             Text="Гаджеты"
                             TextColor="#8B8DC0" />
                         <BoxView
@@ -71,7 +71,7 @@
                             BorderColor="White"
                             BorderWidth="0"
                             Clicked="appliancesBtn_Clicked"
-                            FontSize="12"
+                            FontSize="10"
                             Text="Быт"
                             TextColor="#8B8DC0" />
                         <BoxView
@@ -86,7 +86,7 @@
                             x:Name="restBtn"
                             BackgroundColor="Transparent"
                             Clicked="restBtn_Clicked"
-                            FontSize="12"
+                            FontSize="10"
                             Text="Отдых"
                             TextColor="#8B8DC0" />
                         <BoxView

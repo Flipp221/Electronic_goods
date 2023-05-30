@@ -13,11 +13,11 @@ namespace Electronic_goods.Models
 
         }
 
-        public Busket(int quantity, int clientId, int furnitureId)
+        public Busket(int quantity, int clientId, int tovarsId)
         {
             Quantity = quantity;
             ClientId = clientId;
-            FurnitureId = furnitureId;
+            TovarsId = tovarsId;
         }
 
         [AutoIncrement, PrimaryKey, Column("_id")]
@@ -26,6 +26,6 @@ namespace Electronic_goods.Models
         public int Quantity { get; set; }
 
         public int ClientId { get; set; }
-        public int FurnitureId { get; set; }
+        public int TovarsId { get; set; }
     }
 }

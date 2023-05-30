@@ -45,19 +45,19 @@ namespace Electronic_goods.TabbedPages
 
             switch (result)
             {
-                case "Искусственная кожа":
+                case "Алюминий":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[0]);
                     break;
 
-                case "Искусственный мех":
+                case "Пластик":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[1]);
                     break;
 
-                case "Дерево":
+                case "Антипригарное покрытие":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[2]);
                     break;
 
-                case "Керамика":
+                case "Металл":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[3]);
                     break;
 
@@ -77,11 +77,11 @@ namespace Electronic_goods.TabbedPages
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[0]);
                     break;
 
-                case "Фиолетовый":
+                case "Чёрный":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[1]);
                     break;
 
-                case "Желтый":
+                case "Синий":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[3]);
                     break;
 
@@ -101,19 +101,19 @@ namespace Electronic_goods.TabbedPages
 
             switch (result)
             {
-                case "Стул":
+                case "Инструменты":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[0]);
                     break;
 
-                case "Стол":
+                case "Гаджеты":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[1]);
                     break;
 
-                case "Комод":
+                case "Бытовая техника":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[2]);
                     break;
 
-                case "Шкаф":
+                case "Отдых":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[3]);
                     break;
 
@@ -124,7 +124,7 @@ namespace Electronic_goods.TabbedPages
         {
             CleanAllBtnBoxViews();
             PriceBoxVw.IsVisible = true;
-            string[] aa = new string[3] { "До 3000 р", "От 3000 до 7000 р", "От 7000 до 10 000 р" };
+            string[] aa = new string[4] { "До 3000 р", "От 3000 до 7000 р", "От 7000 до 10 000 р", "Более 10 000 р" };
             string result = await DisplayActionSheet("Ценовой диапазон:", null, null, aa);
 
             switch (result)
@@ -139,6 +139,9 @@ namespace Electronic_goods.TabbedPages
 
                 case "От 7000 до 10 000 р":
                     GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => int.Parse(x.Price) >= 7000 && int.Parse(x.Price) < 10000);
+                    break;
+                case "Более 10 000 р":
+                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => int.Parse(x.Price)  > 10000);
                     break;
 
             }

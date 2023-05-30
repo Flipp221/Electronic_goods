@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Electronic_goods.Models
 {
-    [Table("furniture")]
-    public class Furniture
+    [Table("tovars")]
+    public class Tovars
     {
-        public Furniture()
+        public Tovars()
         {
         }
 
-        public Furniture(string name, string description, string price, string color, string type, string material, string imagePath)
+        public Tovars(string name, string description, string price, string color, string type, string material, string imagePath)
         {
             Name = name;
             Description = description;

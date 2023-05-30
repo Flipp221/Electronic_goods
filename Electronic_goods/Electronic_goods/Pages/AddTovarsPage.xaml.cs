@@ -12,34 +12,34 @@ using Xamarin.Forms.Xaml;
 namespace Electronic_goods.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddFurniturePage : ContentPage
+    public partial class AddTovarsPage : ContentPage
     {
         string path;
         bool state;
         bool state1 = false;
-        Furniture furniture;
-        public AddFurniturePage()
+        Tovars tovars;
+        public AddTovarsPage()
         {
             InitializeComponent();
             BarLbl.Text = "Добавление товаров";
-            TypeFurniture.ItemsSource = App.types;
-            ColorFurniture.ItemsSource = App.colors;
-            MaterialFurniture.ItemsSource = App.materials;
+            TypeTovar.ItemsSource = App.types;
+            ColorTovar.ItemsSource = App.colors;
+            MaterialTovar.ItemsSource = App.materials;
             state = true;
         }
-        public AddFurniturePage(Furniture fur)
+        public AddTovarsPage(Tovars tov)
         {
-            furniture = fur;
+            tovars = tov;
             InitializeComponent();
-            TypeFurniture.ItemsSource = App.types;
-            ColorFurniture.ItemsSource = App.colors;
-            MaterialFurniture.ItemsSource = App.materials;
-            NameFurniture.Text = furniture.Name;
-            DescriptionFurniture.Text = furniture.Description;
-            PriceFurniture.Text = furniture.Price;
-            TypeFurniture.SelectedItem = furniture.Type;
-            ColorFurniture.SelectedItem = furniture.Color;
-            MaterialFurniture.SelectedItem = furniture.Material;
+            TypeTovar.ItemsSource = App.types;
+            ColorTovar.ItemsSource = App.colors;
+            MaterialTovar.ItemsSource = App.materials;
+            NameTovar.Text = tovars.Name;
+            DescriptionTovar.Text = tovars.Description;
+            PriceTovar.Text = tovars.Price;
+            TypeTovar.SelectedItem = tovars.Type;
+            ColorTovar.SelectedItem = tovars.Color;
+            MaterialTovar.SelectedItem = tovars.Material;
             BarLbl.Text = "Редактирование";
             state = false;
         }
@@ -99,15 +99,18 @@ namespace Electronic_goods.Pages
         private async void SaveBtn_Clicked(object sender, EventArgs e)
         {
             if (state)
-                App.Db.SaveFurniture(new Furniture(NameFurniture.Text, DescriptionFurniture.Text, PriceFurniture.Text, ColorFurniture.SelectedItem.ToString(), TypeFurniture.SelectedItem.ToString(), MaterialFurniture.SelectedItem.ToString(), path));
+                App.Db.SaveFurniture(new Tovars(NameTovar.Text, DescriptionTovar.Text, PriceTovar.Text, ColorTovar.SelectedItem.ToString(), TypeTovar.SelectedItem.ToString(), MaterialTovar.SelectedItem.ToString(), path));
             else
             {
                 if (state1)
-                    furniture.ImagePath = path;
-                furniture.Type = TypeFurniture.SelectedItem.ToString();
-                furniture.Color = ColorFurniture.SelectedItem.ToString();
-                furniture.Material = MaterialFurniture.SelectedItem.ToString();
-                App.Db.SaveFurniture(furniture);
+                    tovars.Name = NameTovar.Text.ToString();
+                tovars.Description = DescriptionTovar.Text.ToString();
+                tovars.Price = PriceTovar.Text.ToString();
+                tovars.ImagePath = path;
+                tovars.Type = TypeTovar.SelectedItem.ToString();
+                tovars.Color = ColorTovar.SelectedItem.ToString();
+                tovars.Material = MaterialTovar.SelectedItem.ToString();
+                App.Db.SaveFurniture(tovars);
             }
             await Navigation.PopAsync();
         }

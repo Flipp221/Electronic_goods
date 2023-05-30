@@ -86,12 +86,12 @@ namespace Electronic_goods.TabbedPages
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddFurniturePage());
+            await Navigation.PushAsync(new AddTovarsPage());
         }
 
         private async void GoodsLstViw_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var d = (Furniture)e.Item;
+            var d = (Tovars)e.Item;
             var a = new MoreInfoAboutFurniturePage(d);
             a.BindingContext = d;
             await Navigation.PushAsync(a);

@@ -13,7 +13,7 @@ namespace Electronic_goods.Db
         {
             db = new SQLiteConnection(databasePath);
             db.CreateTable<Busket>();
-            db.CreateTable<Furniture>();
+            db.CreateTable<Tovars>();
             db.CreateTable<Client>();
             db.CreateTable<Order>();
             db.CreateTable<Courier>();
@@ -21,9 +21,9 @@ namespace Electronic_goods.Db
             db.CreateTable<Review>();
             db.CreateTable<ImproveOffer>();
         }
-        public IEnumerable<Furniture> GetFurnituress()
+        public IEnumerable<Tovars> GetFurnituress()
         {
-            return db.Table<Furniture>();
+            return db.Table<Tovars>();
         }
         public IEnumerable<Client> GetClients()
         {
@@ -33,9 +33,9 @@ namespace Electronic_goods.Db
         {
             return db.Table<Busket>();
         }
-        public Furniture GetProjectItem(int id)
+        public Tovars GetProjectItem(int id)
         {
-            return db.Get<Furniture>(id);
+            return db.Get<Tovars>(id);
         }
         public IEnumerable<Review> GetReviews()
         {
@@ -47,9 +47,9 @@ namespace Electronic_goods.Db
         }
 
         public int DeleteFurnitureInBusket(int id) { return db.Delete<Busket>(id); }
-        public int DeleteFurniture(int id) { return db.Delete<Furniture>(id); }
+        public int DeleteFurniture(int id) { return db.Delete<Tovars>(id); }
 
-        public int SaveFurniture(Furniture projectModel)
+        public int SaveFurniture(Tovars projectModel)
         {
             if (projectModel.Id != 0)
             {
