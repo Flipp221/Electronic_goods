@@ -13,6 +13,7 @@ namespace Electronic_goods.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReviewsFormPage : ContentPage
     {
+        int reviewId = 0;
         int count = 0;
         public ReviewsFormPage()
         {
@@ -81,8 +82,8 @@ namespace Electronic_goods.Pages
 
         private async void SendBtn_Clicked(object sender, EventArgs e)
         {
-            Review review = new Review($"{App.client.Surname} {App.client.Name} {App.client.Patronymic}", App.client.AvatarPath, ReviewEntry.Text, count);
-            App.Db.SaveReview(review);
+            Review review = new Review($"{App.client.Surname} {App.client.Name} {App.client.Patronymic}", App.client.AvatarPath, ReviewEntry.Text, count, reviewId);
+            App.Db.SaveReview(review); 
             await Navigation.PopAsync();
         }
     }

@@ -39,8 +39,8 @@
                 IsPullToRefreshEnabled="True"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:Name="qw1">
-                        <ViewCell x:Name="qw2">
+                    <DataTemplate>
+                        <ViewCell>
                             <SwipeView>
                                 <SwipeView.RightItems>
                                     <SwipeItems>
@@ -52,14 +52,14 @@
                                             Text="Удалить" />
                                     </SwipeItems>
                                 </SwipeView.RightItems>
-                                <StackLayout x:Name="qw3" Padding="10">
-                                    <Frame x:Name="qw4" CornerRadius="20">
-                                        <StackLayout x:Name="qw5" Orientation="Horizontal">
+                                <StackLayout Padding="10">
+                                    <Frame CornerRadius="20">
+                                        <StackLayout Orientation="Horizontal">
                                             <ff:CachedImage
                                             HeightRequest="100"
                                             Source="profiljpg.jpg"
                                             WidthRequest="100" />
-                                            <StackLayout x:Name="qw6">
+                                            <StackLayout>
                                                 <Label
                                                 FontSize="17"
                                                 Text="{Binding FIO}"

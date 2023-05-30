@@ -5,19 +5,20 @@ using System.Text;
 
 namespace Electronic_goods.Models
 {
-    [Table("Review")]
+    [Table("review")]
     public class Review
     {
         public Review()
         {
         }
 
-        public Review(string fIO, string path, string reviewText, int count)
+        public Review(string fIO, string path, string reviewText, int count, int reviewId)
         {
             FIO = fIO;
             Path = path;
             ReviewText = reviewText;
             Count = count;
+            ReviewId = reviewId;
         }
 
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -26,6 +27,7 @@ namespace Electronic_goods.Models
         public string Path { get; set; }
         public string ReviewText { get; set; }
         public int Count { get; set; }
+        public int ReviewId { get; set; }
 
     }
 }

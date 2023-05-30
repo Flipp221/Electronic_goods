@@ -32,5 +32,38 @@ namespace Electronic_goods.Pages
         {
             await Navigation.PushAsync(new OfferFormPage());
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            UpdateList();
+        }
+        void UpdateList()
+        {
+            SuggestionsLst.ItemsSource = null;
+            var a = App.Db.GetImproveOffers();
+        }
+        private void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = ((SwipeItem)sender).CommandParameter.ToString();
+                var fre = App.Db.GetImproveOffers();
+
+                foreach (var item in fre)
+                {
+                    if (item.Id  == int.Parse(id))
+                    {
+                        App.Db.DeleteOffers(item.Id);
+                        break;
+                    }
+                }
+                DisplayAlert("Done!", "Предложение удалено!", "ok");
+                UpdateList();
+            }
+            catch(Exception ex)
+            {
+                DisplayAlert("", ex.Message, "ok");
+            }
+        }
     }
 }

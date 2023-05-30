@@ -36,22 +36,38 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10">
-                                <Frame CornerRadius="20">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            x:Name="cc"
+                                            BackgroundColor="Red"
+                                            Clicked="SwipeItem_Clicked"
+                                            CommandParameter="{Binding Id}"
+                                            Text="Удалить" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <StackLayout Padding="10">
+                                    <Frame CornerRadius="20">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image
                                             HeightRequest="100"
                                             Source="profiljpg.jpg"
                                             WidthRequest="100" />
-                                        <StackLayout>
-                                            <Label
+                                            <StackLayout>
+                                                <Label
+                                                FontSize="17"
+                                                Text="{Binding Name}"
+                                                TextColor="#6D6D6D" />
+                                                <Label
                                                 FontSize="15"
                                                 Text="{Binding Review}"
                                                 TextColor="#9A9A9A" />
+                                            </StackLayout>
                                         </StackLayout>
-                                    </StackLayout>
-                                </Frame>
-                            </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </SwipeView>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

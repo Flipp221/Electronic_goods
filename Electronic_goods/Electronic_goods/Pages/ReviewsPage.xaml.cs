@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Electronic_goods.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,6 +13,7 @@ namespace Electronic_goods.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReviewsPage : ContentPage
     {
+        List<Review> aa = new List<Review>();
         public ReviewsPage()
         {
             InitializeComponent();
@@ -24,8 +25,14 @@ namespace Electronic_goods.Pages
             });
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Update();
+        }
         private void Update()
         {
+            aa = new List<Review>();
             ReviewsLst.ItemsSource = null;
             List<REviewSevices> res = new List<REviewSevices>();
             foreach (var item in App.Db.GetReviews())
@@ -84,12 +91,15 @@ namespace Electronic_goods.Pages
 
                 foreach (var item in fre)
                 {
-                    if (item.Id == int.Parse(id))
+                    if (item.ReviewId == int.Parse(id))
                     {
                         App.Db.DeleteRewiws(item.Id);
                         break;
+                        
                     }
                 }
+                DisplayAlert("Done!", "Отзыв удалён!", "ok");
+                Update();
             }
             catch (Exception ex)
             {
