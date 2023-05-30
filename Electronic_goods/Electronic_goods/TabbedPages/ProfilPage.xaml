@@ -4,13 +4,13 @@
              x:Class="Electronic_goods.TabbedPages.ProfilPage"
              BackgroundColor="#F4F4FF">
     <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-        <StackLayout BackgroundColor="#FCC046" VerticalOptions="StartAndExpand">
+        <StackLayout BackgroundColor="#45A29E" VerticalOptions="StartAndExpand">
             <Label
                 Padding="15"
                 FontSize="18"
                 HorizontalOptions="CenterAndExpand"
                 Text="Личный кабинет"
-                TextColor="White" />
+                TextColor="#C5C6C7" />
             <StackLayout Padding="40,20,0,40" Orientation="Horizontal">
                 <ImageButton
                     x:Name="img"

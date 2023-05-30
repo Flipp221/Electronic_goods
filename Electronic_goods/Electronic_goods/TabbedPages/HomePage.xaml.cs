@@ -29,13 +29,13 @@ namespace Electronic_goods.TabbedPages
         {
             GoodsLstViw.ItemsSource = null;
 
-            if (ChairBoxVw.IsVisible)
+            if (toolsBoxVw.IsVisible)
                 GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[0]);
-            else if (TableBoxVw.IsVisible)
+            else if (gadgetsBoxVw.IsVisible)
                 GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[1]);
-            else if (ComodBoxVw.IsVisible)
+            else if (appliancesBoxVw.IsVisible)
                 GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[2]);
-            else if (CupboardBoxVw.IsVisible)
+            else if (restBoxVw.IsVisible)
                 GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[3]);
         }
 
@@ -48,40 +48,40 @@ namespace Electronic_goods.TabbedPages
                 AdminPanel.IsVisible = true;
         }
 
-        private void ChairBtn_Clicked(object sender, EventArgs e)
+        private void toolsBtn_Clicked(object sender, EventArgs e)
         {
             CleanAllBtnBoxViews();
-            ChairBoxVw.IsVisible = true;
+            toolsBoxVw.IsVisible = true;
             Update();
         }
 
-        private void TableBtn_Clicked(object sender, EventArgs e)
+        private void gadgetsBtn_Clicked(object sender, EventArgs e)
         {
             CleanAllBtnBoxViews();
-            TableBoxVw.IsVisible = true;
+            gadgetsBoxVw.IsVisible = true;
             Update();
         }
 
-        private void ComodBtn_Clicked(object sender, EventArgs e)
+        private void appliancesBtn_Clicked(object sender, EventArgs e)
         {
             CleanAllBtnBoxViews();
-            ComodBoxVw.IsVisible = true;
+            appliancesBoxVw.IsVisible = true;
             Update();
         }
 
-        private void cupboard_Clicked(object sender, EventArgs e)
+        private void restBtn_Clicked(object sender, EventArgs e)
         {
             CleanAllBtnBoxViews();
-            CupboardBoxVw.IsVisible = true;
+            restBoxVw.IsVisible = true;
             Update();
         }
 
         private void CleanAllBtnBoxViews()
         {
-            ChairBoxVw.IsVisible = false;
-            TableBoxVw.IsVisible = false;
-            ComodBoxVw.IsVisible = false;
-            CupboardBoxVw.IsVisible = false;
+            toolsBoxVw.IsVisible = false;
+            gadgetsBoxVw.IsVisible = false;
+            appliancesBoxVw.IsVisible = false;
+            restBoxVw.IsVisible = false;
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)

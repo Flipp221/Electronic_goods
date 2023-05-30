@@ -14,7 +14,7 @@
                     FontSize="43"
                     HorizontalOptions="Start"
                     Text="&#xe317;"
-                    TextColor="Black"
+                    TextColor="White"
                     VerticalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer x:Name="BackLbl" Tapped="BackLbl_Tapped" />
@@ -25,8 +25,8 @@
                     Margin="0,0,43,0"
                     FontSize="24"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Добавление мебели"
-                    TextColor="Black"
+                    Text="Добавление товара"
+                    TextColor="White"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <Frame
@@ -43,7 +43,7 @@
                         <Entry
                             x:Name="NameFurniture"
                             BackgroundColor="White"
-                            Placeholder="Название мебели"
+                            Placeholder="Название товара"
                             PlaceholderColor="#ACACAC" />
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
@@ -64,14 +64,14 @@
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Picker
                             x:Name="TypeFurniture"
-                            Title="Тип мебели"
+                            Title="Тип товара"
                             BackgroundColor="White"
                             TitleColor="#ACACAC" />
                     </Frame>
                     <Frame Padding="0" IsClippedToBounds="True">
                         <Picker
                             x:Name="ColorFurniture"
-                            Title="Цвет мебели"
+                            Title="Цвет товара"
                             BackgroundColor="White"
                             TitleColor="#ACACAC" />
                     </Frame>
@@ -89,7 +89,8 @@
                     x:Name="RegistrateBtn"
                     Margin="0,0,0,20"
                     Padding="20,10"
-                    BackgroundColor="#33344F"
+                    BackgroundColor="#66FCF1"
+                    TextColor="#1F2833"
                     Clicked="RegistrateBtn_Clicked"
                     CornerRadius="20"
                     FontSize="18"
@@ -101,12 +102,13 @@
                     x:Name="SaveBtn"
                     Margin="0,0,0,20"
                     Padding="20,10"
-                    BackgroundColor="#33344F"
+                    BackgroundColor="#66FCF1"
+                    TextColor="#1F2833"
                     Clicked="SaveBtn_Clicked"
                     CornerRadius="20"
                     FontSize="18"
                     HorizontalOptions="EndAndExpand"
-                    Text="Save furniture"
+                    Text="Сохранить"
                     TextTransform="None"
                     VerticalOptions="EndAndExpand" />
             </StackLayout>

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electronic_goods.LoginPage"
-            BackgroundColor="#B6B7D0"
+            BackgroundColor="#1F2833"
             NavigationPage.HasNavigationBar="False"
             Visual="Material">
     <StackLayout>
@@ -20,7 +20,7 @@
             </Label.GestureRecognizers>
         </Label>
         <Frame
-            BackgroundColor="White"
+            BackgroundColor="#45A29E"
             CornerRadius="20"
             VerticalOptions="FillAndExpand">
             <Grid>
@@ -32,10 +32,11 @@
 
                 <Label
                     x:Name="WelcomeLbl"
+                    Text="Добро пожаловать в Electronic_Goods"
                     Grid.Row="0"
                     FontFamily="Commissioner"
                     FontSize="21"
-                    TextColor="Black"
+                    TextColor="White"
                     VerticalOptions="End" />
 
                 <StackLayout
@@ -44,24 +45,24 @@
                     VerticalOptions="CenterAndExpand">
                     <Entry
                         x:Name="LoginLbl"
-                        BackgroundColor="White"
+                        BackgroundColor="#45A29E"
                         HorizontalOptions="FillAndExpand"
                         Placeholder="Login"
-                        PlaceholderColor="#B2B2B2"
+                        PlaceholderColor="White"
                         VerticalOptions="CenterAndExpand" />
                     <Entry
                         x:Name="PassLbl"
-                        BackgroundColor="White"
+                        BackgroundColor="#45A29E"
                         HorizontalOptions="FillAndExpand"
                         IsPassword="True"
                         Placeholder="Password"
-                        PlaceholderColor="#B2B2B2"
+                        PlaceholderColor="White"
                         VerticalOptions="CenterAndExpand" />
                     <Button
                         x:Name="LoginBtn"
                         Grid.Row="1"
                         Padding="40,13"
-                        BackgroundColor="#FCC046"
+                        BackgroundColor="#0B0C10"
                         Clicked="LoginBtn_Clicked"
                         CornerRadius="10"
                         FontSize="16"
@@ -74,12 +75,12 @@
 
                 <Label
                     Grid.Row="2"
-                    BackgroundColor="white"
+                    BackgroundColor="#45A29E"
                     FontFamily="Commissioner"
                     FontSize="13"
                     HorizontalOptions="CenterAndExpand"
                     Text="Чтобы продолжить войдите в учетную запись"
-                    TextColor="#CDCDCD"
+                    TextColor="#C5C6C7"
                     VerticalOptions="EndAndExpand" />
             </Grid>
 

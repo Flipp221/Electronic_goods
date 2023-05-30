@@ -69,7 +69,7 @@
                             BackgroundColor="Transparent"
                             Clicked="ProductBtn_Clicked"
                             FontSize="14"
-                            Text="Товары"
+                            Text="Тип товара"
                             TextColor="#8B8DC0" />
                         <BoxView
                             x:Name="ProductBoxVw"

@@ -15,7 +15,6 @@ namespace Electronic_goods
         public LoginPage()
         {
             InitializeComponent();
-            WelcomeLbl.Text = "Добро пожаловать в \nFurniture Shop!";
         }
         private async void BackLblTap_Tapped(object sender, EventArgs e)
         {
@@ -24,9 +23,9 @@ namespace Electronic_goods
 
         private async void LoginBtn_Clicked(object sender, EventArgs e)
         {
-            if (LoginLbl.Text == "qq" && PassLbl.Text == "qq")
+            if (LoginLbl.Text == "admin" && PassLbl.Text == "adm")
             {
-                var cl = new Client("admin", "admin", "admin", "0000", "admin@admin.ru", "qq", "qq", 1);
+                var cl = new Client("Баннов", "Филипп", "Германович", "89047176539", "bannov.2002@bk.ru", "admin", "adm", 1);
                 App.client = cl;
                 await Navigation.PushModalAsync(new NavigationPage(new Page1()));
             }

@@ -14,8 +14,8 @@ namespace Electronic_goods
         public static CRUDOperation db;
         public static Client client;
         public static string[] colors = new string[4] { "Белый", "Чёрный", "Синий", "Красный" };
-        public static string[] types = new string[4] { "Стул", "Стол", "Комод", "Шкаф" };
-        public static string[] materials = new string[4] { "Искусственная кожа", "Искусственный мех", "Дерево", "Керамика" };
+        public static string[] types = new string[4] { "Инструменты", "Гаджеты", "Бытовая техника", "Отдых" };
+        public static string[] materials = new string[4] { "Алюминий", "Пластик", "Антипригарное покрытие", "Металл" };
         public static CRUDOperation Db
         {
             get

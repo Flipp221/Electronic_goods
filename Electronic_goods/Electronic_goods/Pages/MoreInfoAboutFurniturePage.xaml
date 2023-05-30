@@ -102,22 +102,22 @@
                 <StackLayout>
                     <RadioButton
                         x:Name="RBtn1"
-                        Content="Искусственная кожа"
+                        Content="Алюминий"
                         FontSize="14"
                         TextColor="#888686" />
                     <RadioButton
                         x:Name="RBtn2"
-                        Content="Искусственный мех"
+                        Content="Пластик"
                         FontSize="14"
                         TextColor="#888686" />
                     <RadioButton
                         x:Name="RBtn3"
-                        Content="Дерево"
+                        Content="Антипригарное покрытие"
                         FontSize="14"
                         TextColor="#888686" />
                     <RadioButton
                         x:Name="RBtn4"
-                        Content="Керамика"
+                        Content="Металл"
                         FontSize="14"
                         TextColor="#888686" />
                 </StackLayout>

@@ -99,11 +99,12 @@
                 <Button
                     x:Name="OrderBtn"
                     Margin="0,0,30,10"
-                    BackgroundColor="#D37C7E"
+                    BackgroundColor="#66FCF1"
+                    TextColor="#1F2833"
                     Clicked="OrderBtn_Clicked"
                     CornerRadius="10"
                     HorizontalOptions="EndAndExpand"
-                    Text="ЗАКАЗАТЬ" />
+                    Text="Заказать" />
             </StackLayout>
         </StackLayout>
     </StackLayout>

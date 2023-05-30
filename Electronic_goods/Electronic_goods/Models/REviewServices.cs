@@ -16,7 +16,6 @@ namespace Electronic_goods.Models
             FIO = fIO;
             Path = path;
             ReviewText = reviewText;
-            //Count = count;
             Star1 = star1;
             Star2 = star2;
             Star3 = star3;

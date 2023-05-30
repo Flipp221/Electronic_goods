@@ -37,28 +37,28 @@
                     VerticalOptions="StartAndExpand">
                     <StackLayout>
                         <Button
-                            x:Name="ChairBtn"
+                            x:Name="toolsBtn"
                             BackgroundColor="Transparent"
-                            Clicked="ChairBtn_Clicked"
-                            FontSize="14"
-                            Text="Стулья"
+                            Clicked="toolsBtn_Clicked"
+                            FontSize="12"
+                            Text="Инструменты"
                             TextColor="#8B8DC0" />
                         <BoxView
-                            x:Name="ChairBoxVw"
+                            x:Name="toolsBoxVw"
                             Margin="15,-10,15,10"
                             HeightRequest="1"
                             Color="#8B8DC0" />
                     </StackLayout>
                     <StackLayout>
                         <Button
-                            x:Name="TableBtn"
+                            x:Name="gadgetsBtn"
                             BackgroundColor="Transparent"
-                            Clicked="TableBtn_Clicked"
-                            FontSize="14"
-                            Text="Столы"
+                            Clicked="gadgetsBtn_Clicked"
+                            FontSize="12"
+                            Text="Гаджеты"
                             TextColor="#8B8DC0" />
                         <BoxView
-                            x:Name="TableBoxVw"
+                            x:Name="gadgetsBoxVw"
                             Margin="15,-10,15,10"
                             HeightRequest="1"
                             IsVisible="False"
@@ -66,16 +66,16 @@
                     </StackLayout>
                     <StackLayout>
                         <Button
-                            x:Name="ComodBtn"
+                            x:Name="appliancesBtn"
                             BackgroundColor="Transparent"
                             BorderColor="White"
                             BorderWidth="0"
-                            Clicked="ComodBtn_Clicked"
-                            FontSize="14"
-                            Text="Комоды"
+                            Clicked="appliancesBtn_Clicked"
+                            FontSize="12"
+                            Text="Быт"
                             TextColor="#8B8DC0" />
                         <BoxView
-                            x:Name="ComodBoxVw"
+                            x:Name="appliancesBoxVw"
                             Margin="15,-10,15,10"
                             HeightRequest="1"
                             IsVisible="False"
@@ -83,14 +83,14 @@
                     </StackLayout>
                     <StackLayout>
                         <Button
-                            x:Name="cupboard"
+                            x:Name="restBtn"
                             BackgroundColor="Transparent"
-                            Clicked="cupboard_Clicked"
-                            FontSize="14"
-                            Text="Шкафы"
+                            Clicked="restBtn_Clicked"
+                            FontSize="12"
+                            Text="Отдых"
                             TextColor="#8B8DC0" />
                         <BoxView
-                            x:Name="CupboardBoxVw"
+                            x:Name="restBoxVw"
                             Margin="15,-10,15,10"
                             HeightRequest="1"
                             IsVisible="False"

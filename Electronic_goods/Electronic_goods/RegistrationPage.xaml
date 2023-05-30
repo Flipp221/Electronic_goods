@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electronic_goods.RegistrationPage"
-            BackgroundColor="#B6B7D0"
+            BackgroundColor="#C5C6C7"
              BackgroundImageSource="image.png"
             NavigationPage.HasNavigationBar="False"
             Visual="Material">
@@ -83,7 +83,8 @@
             x:Name="RegistrateBtn"
             Margin="0,0,0,20"
             Padding="20,10"
-            BackgroundColor="#33344F"
+            BackgroundColor="#66FCF1"
+            TextColor="#0B0C10"
             Clicked="RegistrateBtn_Clicked"
             CornerRadius="20"
             FontSize="18"
