@@ -62,7 +62,8 @@
                 <Button
                     x:Name="OfferBtn"
                     Padding="10,5"
-                    BackgroundColor="#F06B6D"
+                    BackgroundColor="#66FCF1"
+                    TextColor="#1F2833"
                     Clicked="OfferBtn_Clicked"
                     HorizontalOptions="EndAndExpand"
                     Text="Отправить" />

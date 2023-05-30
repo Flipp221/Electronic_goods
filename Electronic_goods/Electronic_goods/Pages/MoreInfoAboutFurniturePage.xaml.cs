@@ -73,7 +73,7 @@ namespace Electronic_goods.Pages
             Btn4.BorderColor = Color.Black;
         }
 
-        private void ForBasketBtn_Clicked(object sender, EventArgs e)
+        private async void ForBasketBtn_Clicked(object sender, EventArgs e)
         {
             string material = "";
             if (RBtn1.IsChecked)
@@ -87,6 +87,8 @@ namespace Electronic_goods.Pages
             tovars.Material = material;
             Busket bk = new Busket(1, App.client.Id, tovars.Id);
             App.Db.SaveBasket(bk);
+            await DisplayAlert("Done", "Товар успешно добавлен", "Ok");
+            await Navigation.PopAsync();
         }
 
         private async void BackBtn_Tapped(object sender, EventArgs e)

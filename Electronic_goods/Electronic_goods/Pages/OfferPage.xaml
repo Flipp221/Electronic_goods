@@ -66,11 +66,11 @@
             <Label Text="Есть предложения по улучшению? Тогда напиши его!" />
             <Button
                 Margin="10"
-                BackgroundColor="#F06B6D"
+                BackgroundColor="#66FCF1"
+                TextColor="#1F2833"
                 Clicked="Button_Clicked"
                 HorizontalOptions="EndAndExpand"
-                Text="Написать"
-                TextColor="White" />
+                Text="Написать" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

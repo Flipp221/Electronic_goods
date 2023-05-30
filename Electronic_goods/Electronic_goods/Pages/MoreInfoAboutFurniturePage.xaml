@@ -159,12 +159,12 @@
                     x:Name="ForBasketBtn"
                     Margin="0,10"
                     Padding="20,7"
-                    BackgroundColor="#F06B6D"
+                    BackgroundColor="#66FCF1"
+                    TextColor="#1F2833"
                     Clicked="ForBasketBtn_Clicked"
                     CornerRadius="5"
                     HorizontalOptions="EndAndExpand"
-                    Text="В корзину"
-                    TextColor="White" />
+                    Text="В корзину" />
             </StackLayout>
         </StackLayout>
     </ScrollView>

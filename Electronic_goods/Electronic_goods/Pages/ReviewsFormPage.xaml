@@ -31,7 +31,7 @@
             <StackLayout Margin="30" Orientation="Horizontal">
                 <Image
                     HeightRequest="100"
-                    Source="profiljpg.jpg"
+                    
                     WidthRequest="100" />
                 <StackLayout>
                     <Label
@@ -107,7 +107,8 @@
             <Button
                 x:Name="SendBtn"
                 Margin="10,0,30,20"
-                BackgroundColor="#F06B6D"
+                BackgroundColor="#66FCF1"
+                TextColor="#1F2833"
                 Clicked="SendBtn_Clicked"
                 HorizontalOptions="EndAndExpand"
                 Text="Отправить" />

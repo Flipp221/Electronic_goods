@@ -47,6 +47,7 @@ namespace Electronic_goods.Db
         }
 
         public int DeleteFurnitureInBusket(int id) { return db.Delete<Busket>(id); }
+        public int DeleteRewiws(int id) { return db.Delete<Review>(id); }
         public int DeleteFurniture(int id) { return db.Delete<Tovars>(id); }
 
         public int SaveFurniture(Tovars projectModel)

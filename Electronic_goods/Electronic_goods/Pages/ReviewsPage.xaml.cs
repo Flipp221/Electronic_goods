@@ -75,6 +75,28 @@ namespace Electronic_goods.Pages
             await Navigation.PopAsync();
         }
 
+        private void SwipeItem_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = ((SwipeItem)sender).CommandParameter.ToString();
+                var fre = App.Db.GetReviews();
+
+                foreach (var item in fre)
+                {
+                    if (item.Id == int.Parse(id))
+                    {
+                        App.Db.DeleteRewiws(item.Id);
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("", ex.Message, "ok");
+            }
+        }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ReviewsFormPage());

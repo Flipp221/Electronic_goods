@@ -119,7 +119,8 @@
                             <Button
                                 x:Name="OrderBtn"
                                 Margin="80,0"
-                                BackgroundColor="#F06B6D"
+                                BackgroundColor="#66FCF1"
+                                TextColor="#1F2833"
                                 Clicked="OrderBtn_Clicked"
                                 Text="Заказать" />
                         </StackLayout>
