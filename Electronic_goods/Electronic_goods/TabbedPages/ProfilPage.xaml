@@ -29,31 +29,6 @@
                     TextColor="White"
                     VerticalOptions="Start" />
             </StackLayout>
-        </StackLayout>
-        <StackLayout>
-            <StackLayout
-                Margin="0"
-                Padding="10"
-                BackgroundColor="White"
-                Orientation="Horizontal">
-                <Label
-                    FontFamily="MaterialIconsFont"
-                    FontSize="28"
-                    HorizontalOptions="Start"
-                    Text="&#xe0b7;"
-                    TextColor="#ADA7A7"
-                    VerticalOptions="CenterAndExpand" />
-                <Label
-                    BackgroundColor="White"
-                    FontSize="18"
-                    HorizontalOptions="StartAndExpand"
-                    Text="Предложения для улучшения"
-                    TextColor="#ADA7A7"
-                    VerticalOptions="CenterAndExpand" />
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
             <StackLayout
                 Margin="0"
                 Padding="10"

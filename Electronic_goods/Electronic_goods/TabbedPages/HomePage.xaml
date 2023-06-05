@@ -131,6 +131,16 @@
                                                 FontSize="20"
                                                 Text="{Binding Price}"
                                                 TextColor="#D37C7E" />
+                                            <Label
+                                                Margin="60,-45"
+                                                FontSize="20"
+                                                Text="|"
+                                                TextColor="Black" />
+                                            <Label
+                                                Margin="70,14"
+                                                FontSize="20"
+                                                Text="{Binding Count}"
+                                                TextColor="Black" />
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

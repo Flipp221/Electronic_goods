@@ -40,6 +40,7 @@ namespace Electronic_goods.Pages
             TypeTovar.SelectedItem = tovars.Type;
             ColorTovar.SelectedItem = tovars.Color;
             MaterialTovar.SelectedItem = tovars.Material;
+            CountTovar.Text = tovars.Count;
             BarLbl.Text = "Редактирование";
             state = false;
         }
@@ -99,17 +100,18 @@ namespace Electronic_goods.Pages
         private async void SaveBtn_Clicked(object sender, EventArgs e)
         {
             if (state)
-                App.Db.SaveFurniture(new Tovars(NameTovar.Text, DescriptionTovar.Text, PriceTovar.Text, ColorTovar.SelectedItem.ToString(), TypeTovar.SelectedItem.ToString(), MaterialTovar.SelectedItem.ToString(), path));
+                App.Db.SaveFurniture(new Tovars(NameTovar.Text, DescriptionTovar.Text, PriceTovar.Text, ColorTovar.SelectedItem.ToString(), TypeTovar.SelectedItem.ToString(), MaterialTovar.SelectedItem.ToString(), path, CountTovar.Text));
             else
             {
                 if (state1)
-                    tovars.Name = NameTovar.Text.ToString();
+                tovars.Name = NameTovar.Text.ToString();
                 tovars.Description = DescriptionTovar.Text.ToString();
                 tovars.Price = PriceTovar.Text.ToString();
                 tovars.ImagePath = path;
                 tovars.Type = TypeTovar.SelectedItem.ToString();
                 tovars.Color = ColorTovar.SelectedItem.ToString();
                 tovars.Material = MaterialTovar.SelectedItem.ToString();
+                tovars.Count = CountTovar.Text.ToString();
                 App.Db.SaveFurniture(tovars);
             }
             await Navigation.PopAsync();

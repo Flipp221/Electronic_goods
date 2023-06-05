@@ -92,7 +92,7 @@ namespace Electronic_goods.TabbedPages
         private async void GoodsLstViw_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var d = (Tovars)e.Item;
-            var a = new MoreInfoAboutFurniturePage(d);
+            var a = new InfoTovarsPage(d);
             a.BindingContext = d;
             await Navigation.PushAsync(a);
         }

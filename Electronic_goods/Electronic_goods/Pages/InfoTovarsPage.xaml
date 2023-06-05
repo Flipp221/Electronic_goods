@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Electronic_goods.Pages.MoreInfoAboutFurniturePage"
+             x:Class="Electronic_goods.Pages.InfoTovarsPage"
              NavigationPage.HasNavigationBar="False">
     <ScrollView>
         <StackLayout Spacing="0">
@@ -62,75 +62,36 @@
                     TextColor="#433939" />
                 <Label
                     FontSize="11"
-                    Text="Выбрать цвет"
-                    TextColor="#433939" />
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="Btn1"
-                        BackgroundColor="#E2DAD7"
-                        Clicked="Btn1_Clicked"
-                        CornerRadius="50"
-                        HeightRequest="30"
-                        WidthRequest="30" />
-                    <Button
-                        x:Name="Btn2"
-                        BackgroundColor="#8B8DC0"
-                        Clicked="Btn2_Clicked"
-                        CornerRadius="50"
-                        HeightRequest="30"
-                        WidthRequest="30" />
-                    <Button
-                        x:Name="Btn3"
-                        BackgroundColor="#D37C7E"
-                        Clicked="Btn3_Clicked"
-                        CornerRadius="50"
-                        HeightRequest="30"
-                        WidthRequest="30" />
-                    <Button
-                        x:Name="Btn4"
-                        BackgroundColor="#FCC046"
-                        Clicked="Btn4_Clicked"
-                        CornerRadius="50"
-                        HeightRequest="30"
-                        WidthRequest="30" />
-                </StackLayout>
-
-                <Label
-                    FontSize="11"
-                    Text="Выбор материала"
-                    TextColor="#433939" />
-                <StackLayout>
-                    <RadioButton
-                        x:Name="RBtn1"
-                        Content="Алюминий"
-                        FontSize="14"
-                        TextColor="#888686" />
-                    <RadioButton
-                        x:Name="RBtn2"
-                        Content="Пластик"
-                        FontSize="14"
-                        TextColor="#888686" />
-                    <RadioButton
-                        x:Name="RBtn3"
-                        Content="Антипригарное покрытие"
-                        FontSize="14"
-                        TextColor="#888686" />
-                    <RadioButton
-                        x:Name="RBtn4"
-                        Content="Металл"
-                        FontSize="14"
-                        TextColor="#888686" />
-                </StackLayout>
-                <Label
-                    FontSize="11"
                     Text="Цена"
                     TextColor="#433939" />
-
                 <Label
                     FontSize="14"
                     Text="{Binding Price}"
                     TextColor="#D37C7E" />
-
+                <Label
+                    FontSize="11"
+                    Text="Материал:"
+                    TextColor="#433939" />
+                <Label
+                    FontSize="13"
+                    Text="{Binding Material}"
+                    TextColor="#9A9A9A" />
+                <Label
+                    FontSize="11"
+                    Text="Цвет:"
+                    TextColor="#433939" />
+                <Label
+                    FontSize="13"
+                    Text="{Binding Color}"
+                    TextColor="#9A9A9A" />
+                <Label
+                    FontSize="11"
+                    Text="Тип товара:"
+                    TextColor="#433939" />
+                <Label
+                    FontSize="13"
+                    Text="{Binding Type}"
+                    TextColor="#9A9A9A" />
                 <Label
                     FontSize="11"
                     Text="Описание товара"
@@ -138,6 +99,14 @@
                 <Label
                     FontSize="13"
                     Text="{Binding Description}"
+                    TextColor="#9A9A9A" />
+                <Label
+                    FontSize="11"
+                    Text="Количество товара"
+                    TextColor="#433939" />
+                <Label
+                    FontSize="13"
+                    Text="{Binding Count}"
                     TextColor="#9A9A9A" />
             </StackLayout>
             <StackLayout

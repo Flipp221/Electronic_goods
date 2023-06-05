@@ -82,6 +82,13 @@
                             BackgroundColor="White"
                             TitleColor="#ACACAC" />
                     </Frame>
+                    <Frame Padding="0" IsClippedToBounds="True">
+                        <Entry
+                            x:Name="CountTovar"
+                            BackgroundColor="White"
+                            Placeholder="Количество товара"
+                            PlaceholderColor="#ACACAC" />
+                    </Frame>
                 </StackLayout>
             </Frame>
             <StackLayout Margin="20,0,20,0" Orientation="Horizontal">

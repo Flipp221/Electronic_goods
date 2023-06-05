@@ -12,7 +12,7 @@ namespace Electronic_goods.Models
         {
         }
 
-        public Tovars(string name, string description, string price, string color, string type, string material, string imagePath)
+        public Tovars(string name, string description, string price, string color, string type, string material, string imagePath, string count)
         {
             Name = name;
             Description = description;
@@ -21,6 +21,7 @@ namespace Electronic_goods.Models
             Type = type;
             Material = material;
             ImagePath = imagePath;
+            Count = count;
         }
 
         [AutoIncrement, PrimaryKey, Column("_id")]
@@ -33,5 +34,6 @@ namespace Electronic_goods.Models
         public string Type { get; set; }
         public string Material { get; set; }
         public string ImagePath { get; set; }
+        public string Count { get; set; }
     }
 }
