@@ -48,6 +48,8 @@ namespace Electronic_goods.Pages
                         {
                             item.Count = (Convert.ToInt32(item.Count.ToString()) - 1).ToString();
                             App.Db.SaveTovars(item);
+                            Report report = new Report(item.Name, item.Count = "1");
+                            App.Db.SaveReport(report);
                             break;
                         }
                     }

@@ -16,5 +16,13 @@ namespace Electronic_goods
         {
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (App.client.RoleId == 0)
+                AdminPanel.IsVisible = false;
+            else if (App.client.RoleId == 1)
+                AdminPanel.IsVisible = true;
+        }
     }
 }

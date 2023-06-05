@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electronic_goods.TabbedPages.ReportPage"
+             BackgroundColor="#F4F4FF">
+    <StackLayout>
+        <StackLayout BackgroundColor="White">
+            <Label
+                Padding="20"
+                FontSize="24"
+                Text="Отчёт"
+                TextColor="#887D7D" />
+        </StackLayout>
+        <StackLayout>
+            <ListView
+                x:Name="ReportLst"
+                HasUnevenRows="True"
+                HorizontalOptions="StartAndExpand"
+                IsPullToRefreshEnabled="True"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            x:Name="cc"
+                                            BackgroundColor="Red"
+                                            Clicked="SwipeItem_Clicked"
+                                            CommandParameter="{Binding Id}"
+                                            Text="Удалить" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <StackLayout Padding="10">
+                                    <Frame CornerRadius="20">
+                                        <StackLayout Orientation="Horizontal">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <Label
+                                                    FontSize="17"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding Name}"
+                                                    TextColor="#6D6D6D" />
+                                                <Label
+                                                    FontSize="15"
+                                                    Text="{Binding Count}"
+                                                    TextColor="#9A9A9A" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -20,6 +20,7 @@ namespace Electronic_goods.Db
             db.CreateTable<Delivery>();
             db.CreateTable<Review>();
             db.CreateTable<ImproveOffer>();
+            db.CreateTable<Report>();
         }
         public IEnumerable<Tovars> GetFurnituress()
         {
@@ -49,13 +50,30 @@ namespace Electronic_goods.Db
         {
             return db.Table<Tovars >();
         }
+        public IEnumerable<Report> GetReport()
+        {
+            return db.Table<Report>();
+        }
 
         public int DeleteTovarsInBasket(int id) { return db.Delete<Busket>(id); }
         public int DeleteRewiws(int id) { return db.Delete<Review>(id); }
         public int DeleteTovars(int id) { return db.Delete<Tovars>(id); }
         public int DeleteOffers(int id) { return db.Delete<ImproveOffer>(id); }
+        public int DeleteReports(int id) { return db.Delete<Report>(id); }
 
         public int SaveTovars(Tovars projectModel)
+        {
+            if (projectModel.Id != 0)
+            {
+                db.Update(projectModel);
+                return projectModel.Id;
+            }
+            else
+            {
+                return db.Insert(projectModel);
+            }
+        }
+        public int SaveReport(Report projectModel)
         {
             if (projectModel.Id != 0)
             {
