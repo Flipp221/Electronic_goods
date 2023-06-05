@@ -51,7 +51,7 @@ namespace Electronic_goods.Pages
 
         private async void deleteBtn_Tapped(object sender, EventArgs e)
         {
-            App.Db.DeleteFurniture(tovars.Id);
+            App.Db.DeleteTovars(tovars.Id);
             await DisplayAlert("Done", "Товар удалён", "Ok");
             await Navigation.PopAsync();
         }

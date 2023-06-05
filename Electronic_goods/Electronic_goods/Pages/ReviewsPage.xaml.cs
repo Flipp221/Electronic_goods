@@ -21,7 +21,7 @@ namespace Electronic_goods.Pages
             ReviewsLst.RefreshCommand = new Command(() =>
             {
                 Update();
-                ReviewsLst.IsRefreshing = false; //выключить анимацию обновления 
+                ReviewsLst.IsRefreshing = false; 
             });
         }
 

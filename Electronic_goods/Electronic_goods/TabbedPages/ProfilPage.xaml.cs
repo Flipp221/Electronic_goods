@@ -27,11 +27,6 @@ namespace Electronic_goods.TabbedPages
             await Navigation.PushAsync(new ReviewsPage());
         }
 
-        private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new OfferPage());
-        }
-
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
             string result = await DisplayActionSheet("Выберите:", null, null, "Фото из галереи", "Фото из камеры");

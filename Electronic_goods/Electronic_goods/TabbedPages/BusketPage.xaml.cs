@@ -20,7 +20,7 @@ namespace Electronic_goods.TabbedPages
             InitializeComponent();
             BusketLst.RefreshCommand = new Command(() =>
             {
-                BusketLst.IsRefreshing = false; //выключить анимацию обновления 
+                BusketLst.IsRefreshing = false;
             });
         }
         protected override void OnAppearing()
@@ -58,7 +58,7 @@ namespace Electronic_goods.TabbedPages
                 {
                     if (item.TovarsId == int.Parse(id))
                     {
-                        App.Db.DeleteFurnitureInBusket(item.Id);
+                        App.Db.DeleteTovarsInBasket(item.Id);
                         break;
                     }
                 }
@@ -72,6 +72,7 @@ namespace Electronic_goods.TabbedPages
 
         private async void OrderBtn_Clicked(object sender, EventArgs e)
         {
+
             await Navigation.PushAsync(new CheckoutPage(aa.Count, price));
         }
     }

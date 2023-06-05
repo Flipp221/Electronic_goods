@@ -21,7 +21,7 @@ namespace Electronic_goods.TabbedPages
             GoodsLstViw.RefreshCommand = new Command(() =>
             {
                 Update();
-                GoodsLstViw.IsRefreshing = false; //выключить анимацию обновления 
+                GoodsLstViw.IsRefreshing = false;
 
             });
         }

@@ -76,8 +76,10 @@
                             Text="Способ оплаты:"
                             TextColor="Black" />
                         <StackLayout Padding="20" BackgroundColor="#FFF6F6">
-                            <RadioButton Content="Картой онлайн или Goolge Pay" />
+                            <RadioButton Content="Оплата картой" />
                             <RadioButton Content="Наличный расчет" />
+                            <RadioButton Content="СМС-оплата" />
+                            <RadioButton Content="Apple Рay" />
                         </StackLayout>
                         <StackLayout>
                             <Label
@@ -98,10 +100,6 @@
                                     Text="30 000 Р"
                                     TextColor="Black" />
                             </StackLayout>
-
-                            <Frame>
-                                <Label FontSize="12" Text="Размещая заказ, вы соглашаетесь на обработку персональных данных в соответствии с Условиями" />
-                            </Frame>
                             <StackLayout Margin="0,20" Orientation="Horizontal">
                                 <Label
                                     Margin="20,0,0,0"
@@ -117,6 +115,7 @@
                                     TextColor="Black" />
                             </StackLayout>
                             <Button
+                                CommandParameter="{Binding Id}"
                                 x:Name="OrderBtn"
                                 Margin="80,0"
                                 BackgroundColor="#66FCF1"
