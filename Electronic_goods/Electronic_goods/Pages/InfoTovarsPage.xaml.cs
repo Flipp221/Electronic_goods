@@ -31,12 +31,38 @@ namespace Electronic_goods.Pages
 
         private async void ForBasketBtn_Clicked(object sender, EventArgs e)
         {
-            string material = "";
-            tovars.Material = material;
-            Busket bk = new Busket(1, App.client.Id, tovars.Id);
-            App.Db.SaveBasket(bk);
-            await DisplayAlert("Done", "Товар успешно добавлен", "Ok");
-            await Navigation.PopAsync();
+            if (tovars.Count == 0.ToString())
+            {
+                await DisplayAlert("Error", "В данный момент товар отсутствует в магазине", "Ok");
+            }
+            else
+            {
+                try
+                {
+                    var id = ((Button)sender).CommandParameter.ToString();
+                    var fre = App.Db.GetTovars();
+
+                    foreach (var item in fre)
+                    {
+                        if (item.Id == int.Parse(id))
+                        {
+                            item.Count = (Convert.ToInt32(item.Count.ToString()) - 1).ToString();
+                            App.Db.SaveTovars(item);
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("", ex.Message, "ok");
+                }
+                string material = "";
+                tovars.Material = material;
+                Busket bk = new Busket(1, App.client.Id, tovars.Id);
+                App.Db.SaveBasket(bk);
+                await DisplayAlert("Done", "Товар успешно добавлен", "Ok");
+                await Navigation.PopAsync();
+            }
         }
 
         private async void BackBtn_Tapped(object sender, EventArgs e)

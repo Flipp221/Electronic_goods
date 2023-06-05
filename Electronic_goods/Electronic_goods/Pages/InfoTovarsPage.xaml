@@ -125,6 +125,7 @@
                         TextColor="#D37C7E" />
                 </StackLayout>
                 <Button
+                    CommandParameter="{Binding Id}"
                     x:Name="ForBasketBtn"
                     Margin="0,10"
                     Padding="20,7"

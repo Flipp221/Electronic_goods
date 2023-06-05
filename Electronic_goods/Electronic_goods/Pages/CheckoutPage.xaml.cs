@@ -13,7 +13,6 @@ namespace Electronic_goods.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CheckoutPage : ContentPage
     {
-        List<Tovars> aa = new List<Tovars>();
         public CheckoutPage(int a, int b)
         {
             InitializeComponent();
@@ -30,25 +29,6 @@ namespace Electronic_goods.Pages
         }
         private async void OrderBtn_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                var id = ((Button)sender).CommandParameter.ToString();
-                var fre = App.Db.GetTovars();
-
-                foreach (var item in fre)
-                {
-                    if (item.Id == int.Parse(id))
-                    {
-                        item.Count = (Convert.ToInt32(item.Count.ToString()) - 1).ToString();
-                        App.Db.SaveTovars(item);
-                        break;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("", ex.Message, "ok");
-            }
             await DisplayAlert("Уведомление", "Заказ успешно оформлен", "ОК");
             await Navigation.PopAsync();
         }

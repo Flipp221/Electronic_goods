@@ -101,7 +101,7 @@ namespace Electronic_goods.Pages
         private async void SaveBtn_Clicked(object sender, EventArgs e)
         {
             if (state)
-                App.Db.SaveTovars(new Tovars(NameTovar.Text, DescriptionTovar.Text, PriceTovar.Text, ColorTovar.SelectedItem.ToString(), TypeTovar.SelectedItem.ToString(), MaterialTovar.SelectedItem.ToString(), path, CountTovar.Text, tovarsid));
+                App.Db.SaveTovars(new Tovars(NameTovar.Text, DescriptionTovar.Text, PriceTovar.Text, ColorTovar.SelectedItem.ToString(), TypeTovar.SelectedItem.ToString(), MaterialTovar.SelectedItem.ToString(), path, CountTovar.Text));
             else
             {
                 if (state1)

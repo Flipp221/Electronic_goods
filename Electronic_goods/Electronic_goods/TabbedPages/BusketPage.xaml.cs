@@ -14,6 +14,7 @@ namespace Electronic_goods.TabbedPages
     public partial class BusketPage : ContentPage
     {
         List<Tovars> aa = new List<Tovars>();
+        Tovars tovars;
         int price = 0;
         public BusketPage()
         {
@@ -72,7 +73,6 @@ namespace Electronic_goods.TabbedPages
 
         private async void OrderBtn_Clicked(object sender, EventArgs e)
         {
-
             await Navigation.PushAsync(new CheckoutPage(aa.Count, price));
         }
     }
