@@ -55,10 +55,11 @@
                                 Text="{Binding TelephoneNumber}" />
                         </Frame>
                         <Frame>
-                            <Entry Placeholder="Серия и номер паспорта" />
+                            <Entry x:Name="Login" Placeholder="Серия и номер паспорта" />
                         </Frame>
                         <Frame>
                             <Entry
+                                x:Name="mailEnt"
                                 Keyboard="Email"
                                 Placeholder="Электронная почта"
                                 Text="{Binding EMail}" />
@@ -115,7 +116,6 @@
                                     TextColor="Black" />
                             </StackLayout>
                             <Button
-                                CommandParameter="{Binding Id}"
                                 x:Name="OrderBtn"
                                 Margin="80,0"
                                 BackgroundColor="#66FCF1"
