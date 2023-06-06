@@ -37,6 +37,7 @@ namespace Electronic_goods.Pages
             MaterialTovar.ItemsSource = App.materials;
             NameTovar.Text = tovars.Name;
             DescriptionTovar.Text = tovars.Description;
+            path = tovars.ImagePath;
             PriceTovar.Text = tovars.Price;
             TypeTovar.SelectedItem = tovars.Type;
             ColorTovar.SelectedItem = tovars.Color;

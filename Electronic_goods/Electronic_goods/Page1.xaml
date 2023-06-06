@@ -15,5 +15,5 @@
     <local:SearchPage Title="Поиск" IconImageSource="search.ico" />
     <local:BusketPage Title="Корзина" IconImageSource="Basket.ico" />
     <local:ProfilPage Title="Профиль" IconImageSource="Profil.ico" BindingContext="{x:Static lo:App.client}"/>
-    <local:ReportPage x:Name="AdminPanel" Title="Отчёт" IconImageSource="Report.ico" IsVisible="false"/>
+    <local:ReportPage x:Name="AdminPanel" Title="Отчёт" IconImageSource="Report.ico" IsVisible="false" BindingContext="{x:Static lo:App.client}"/>
 </TabbedPage>

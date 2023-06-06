@@ -12,15 +12,17 @@ namespace Electronic_goods.Models
         {
 
         }
-        public Report(string name, string count)
+        public Report(string name, string count, string fIO)
         {
             Name = name;
             Count = count;
+            FIO = fIO;
         }
 
         [AutoIncrement, PrimaryKey, Column("_id")]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Count { get; set; }
+        public string FIO { get; set; }
     }
 }
