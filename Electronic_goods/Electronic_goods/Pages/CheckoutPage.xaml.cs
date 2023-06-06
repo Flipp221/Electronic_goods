@@ -37,7 +37,7 @@ namespace Electronic_goods.Pages
             try
             {
                 MailAddress fromAdress = new MailAddress($"bannov.2002@bk.ru", "Electronick_Goods");
-                MailAddress toAdress = new MailAddress(mailEnt.Text, Login.Text);
+                MailAddress toAdress = new MailAddress(mailEnt.Text, "");
                 MailMessage message = new MailMessage(fromAdress, toAdress);
                 message.Body = "Магазин Electronick_Goods приветствует вас," + Environment.NewLine + $"{FIOEntry.Text}" + Environment.NewLine + "Спасибо вам за покупку в нашем магазине, мы сообщим когда ваш товар прибудет!!!";
                 message.Subject = "Администрация магазина - Electronick_Goods";

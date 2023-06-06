@@ -55,19 +55,12 @@
                                 Text="{Binding TelephoneNumber}" />
                         </Frame>
                         <Frame>
-                            <Entry x:Name="Login" Placeholder="Серия и номер паспорта" />
-                        </Frame>
-                        <Frame>
                             <Entry
                                 x:Name="mailEnt"
                                 Keyboard="Email"
                                 Placeholder="Электронная почта"
                                 Text="{Binding EMail}" />
                         </Frame>
-                        <Label
-                            Margin="10"
-                            FontSize="12"
-                            Text="Мы пришлем уведомление о статусе заказа на указанные вами телефон и e-mail" />
                     </StackLayout>
 
                     <StackLayout Margin="20,10">
