@@ -30,13 +30,13 @@ namespace Electronic_goods.TabbedPages
             GoodsLstViw.ItemsSource = null;
 
             if (toolsBoxVw.IsVisible)
-                GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[0]);
+                GoodsLstViw.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[0]);
             else if (gadgetsBoxVw.IsVisible)
-                GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[1]);
+                GoodsLstViw.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[1]);
             else if (appliancesBoxVw.IsVisible)
-                GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[2]);
+                GoodsLstViw.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[2]);
             else if (restBoxVw.IsVisible)
-                GoodsLstViw.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[3]);
+                GoodsLstViw.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[3]);
         }
 
         protected override void OnAppearing()

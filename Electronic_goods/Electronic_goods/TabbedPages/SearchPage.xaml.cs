@@ -19,14 +19,14 @@ namespace Electronic_goods.TabbedPages
             GoodsFilterLstView.RefreshCommand = new Command(() =>
             {
                 Update();
-                GoodsFilterLstView.IsRefreshing = false; //выключить анимацию обновления 
+                GoodsFilterLstView.IsRefreshing = false; 
             });
         }
 
         private void Update()
         {
             GoodsFilterLstView.ItemsSource = null;
-            GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress();
+            GoodsFilterLstView.ItemsSource = App.Db.GetTovars();
         }
 
         private void CleanAllBtnBoxViews()
@@ -46,19 +46,19 @@ namespace Electronic_goods.TabbedPages
             switch (result)
             {
                 case "Алюминий":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[0]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Material == App.materials[0]);
                     break;
 
                 case "Пластик":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[1]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Material == App.materials[1]);
                     break;
 
                 case "Антипригарное покрытие":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[2]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Material == App.materials[2]);
                     break;
 
                 case "Металл":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Material == App.materials[3]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Material == App.materials[3]);
                     break;
 
             }
@@ -74,19 +74,19 @@ namespace Electronic_goods.TabbedPages
             switch (result)
             {
                 case "Белый":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[0]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Color == App.colors[0]);
                     break;
 
                 case "Чёрный":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[1]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Color == App.colors[1]);
                     break;
 
                 case "Синий":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[3]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Color == App.colors[2]);
                     break;
 
                 case "Красный":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Color == App.colors[2]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Color == App.colors[3]);
                     break;
 
             }
@@ -102,19 +102,19 @@ namespace Electronic_goods.TabbedPages
             switch (result)
             {
                 case "Инструменты":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[0]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[0]);
                     break;
 
                 case "Гаджеты":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[1]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[1]);
                     break;
 
                 case "Бытовая техника":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[2]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[2]);
                     break;
 
                 case "Отдых":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Type == App.types[3]);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Type == App.types[3]);
                     break;
 
             }
@@ -130,18 +130,18 @@ namespace Electronic_goods.TabbedPages
             switch (result)
             {
                 case "До 3000 р":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => int.Parse(x.Price) < 3000);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => int.Parse(x.Price) < 3000);
                     break;
 
                 case "От 3000 до 7000 р":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => int.Parse(x.Price) >= 3000 && int.Parse(x.Price) < 7000);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => int.Parse(x.Price) >= 3000 && int.Parse(x.Price) < 7000);
                     break;
 
                 case "От 7000 до 10 000 р":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => int.Parse(x.Price) >= 7000 && int.Parse(x.Price) < 10000);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => int.Parse(x.Price) >= 7000 && int.Parse(x.Price) < 10000);
                     break;
                 case "Более 10 000 р":
-                    GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => int.Parse(x.Price)  > 10000);
+                    GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => int.Parse(x.Price)  > 10000);
                     break;
 
             }
@@ -149,7 +149,7 @@ namespace Electronic_goods.TabbedPages
 
         private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            GoodsFilterLstView.ItemsSource = App.Db.GetFurnituress().Select(f => f).Where(x => x.Name.Contains(searchBar.Text));
+            GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Name.Contains(searchBar.Text));
         }
     }
 }

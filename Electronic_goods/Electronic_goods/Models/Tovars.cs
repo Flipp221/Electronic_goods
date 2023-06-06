@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Electronic_goods.Models
 {
-    [Table("tovars")]
+    [Table("tovar")]
     public class Tovars
     {
         public Tovars()
@@ -26,7 +26,6 @@ namespace Electronic_goods.Models
 
         [AutoIncrement, PrimaryKey, Column("_id")]
         public int Id { get; set; }
-        [Unique]
         public string Name { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }

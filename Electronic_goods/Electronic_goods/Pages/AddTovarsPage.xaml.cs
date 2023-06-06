@@ -44,7 +44,7 @@ namespace Electronic_goods.Pages
             MaterialTovar.SelectedItem = tovars.Material;
             CountTovar.Text = tovars.Count;
             BarLbl.Text = "Редактирование";
-            state = false;
+            state1 = true;
         }
 
         private async void RegistrateBtn_Clicked(object sender, EventArgs e)

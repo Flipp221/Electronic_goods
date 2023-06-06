@@ -22,7 +22,7 @@ namespace Electronic_goods.Db
             db.CreateTable<ImproveOffer>();
             db.CreateTable<Report>();
         }
-        public IEnumerable<Tovars> GetFurnituress()
+        public IEnumerable<Tovars> GetTovars()
         {
             return db.Table<Tovars>();
         }
@@ -45,10 +45,6 @@ namespace Electronic_goods.Db
         public IEnumerable<ImproveOffer> GetImproveOffers()
         {
             return db.Table<ImproveOffer>();
-        }
-        public IEnumerable<Tovars> GetTovars()
-        {
-            return db.Table<Tovars >();
         }
         public IEnumerable<Report> GetReport()
         {

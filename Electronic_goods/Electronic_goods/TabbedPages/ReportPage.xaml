@@ -44,15 +44,20 @@
                                                 <Label
                                                 Margin="0,10"
                                                 FontSize="20"
+                                                Text="Приобрел:"
+                                                TextColor="#6D6D6D" />
+                                                <Label
+                                                Margin="0,10"
+                                                FontSize="20"
                                                 Text="{Binding Name}"
                                                 TextColor="#D37C7E" />
                                                 <Label
-                                                Margin="200,-42"
+                                                Margin="0,10"
                                                 FontSize="20"
-                                                Text="|"
-                                                TextColor="Black" />
+                                                Text="В количестве:"
+                                                TextColor="#6D6D6D" />
                                                 <Label
-                                                Margin="210,10"
+                                                Margin="0,10"
                                                 FontSize="20"
                                                 Text="{Binding Count}"
                                                 TextColor="Black" />
