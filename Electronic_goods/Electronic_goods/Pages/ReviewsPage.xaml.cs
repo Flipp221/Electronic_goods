@@ -109,7 +109,14 @@ namespace Electronic_goods.Pages
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ReviewsFormPage());
+            if (App.client.RoleId == 2)
+            {
+                await DisplayAlert("Error", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
+            }
+            else
+            {
+                await Navigation.PushAsync(new ReviewsFormPage());
+            }
         }
     }
 }

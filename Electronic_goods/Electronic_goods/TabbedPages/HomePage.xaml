@@ -132,6 +132,11 @@
                                                 Text="{Binding Price}"
                                                 TextColor="#D37C7E" />
                                             <Label
+                                                Margin="30,10"
+                                                FontSize="20"
+                                                Text="P"
+                                                TextColor="Black" />
+                                            <Label
                                                 Margin="60,-45"
                                                 FontSize="20"
                                                 Text="|"

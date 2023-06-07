@@ -73,7 +73,14 @@ namespace Electronic_goods.TabbedPages
 
         private async void OrderBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CheckoutPage(aa.Count, price));
+            if (App.client.RoleId == 2)
+            {
+                await DisplayAlert("Error", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
+            }
+            else
+            {
+                await Navigation.PushAsync(new CheckoutPage(aa.Count, price));
+            }
         }
     }
 }

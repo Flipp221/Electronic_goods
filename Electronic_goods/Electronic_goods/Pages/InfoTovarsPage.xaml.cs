@@ -35,6 +35,10 @@ namespace Electronic_goods.Pages
             {
                 await DisplayAlert("Error", "В данный момент товар отсутствует в магазине", "Ok");
             }
+            if (App.client.RoleId == 2)
+            {
+                await DisplayAlert("Error", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
+            }
             else
             {
                 try

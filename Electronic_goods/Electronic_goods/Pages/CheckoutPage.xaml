@@ -70,10 +70,7 @@
                             Text="Способ оплаты:"
                             TextColor="Black" />
                         <StackLayout Padding="20" BackgroundColor="#FFF6F6">
-                            <RadioButton Content="Оплата картой" />
-                            <RadioButton Content="Наличный расчет" />
-                            <RadioButton Content="СМС-оплата" />
-                            <RadioButton Content="Apple Рay" />
+                            <RadioButton Content="Оплата при получении" />
                         </StackLayout>
                         <StackLayout>
                             <Label

@@ -40,7 +40,7 @@
                     TextColor="#1F2833"
                     Clicked="LoginPageBtn_Clicked"
                     CornerRadius="27"
-                    Text="Login" />
+                    Text="Войти" />
                 <Button
                     x:Name="RegistrationPageBtn"
                     Padding="0,10"
@@ -48,7 +48,15 @@
                     TextColor="white"
                     Clicked="RegistrationPageBtn_Clicked"
                     CornerRadius="27"
-                    Text="Registration" />
+                    Text="Зарегестрироваться" />
+                <Button
+                    x:Name="GuestAuthBtn"
+                    Padding="0,10"
+                    BackgroundColor="#45A29E"
+                    TextColor="white"
+                    Clicked="GuestAuthBtn_Clicked"
+                    CornerRadius="27"
+                    Text="Войти от гостя" />
             </StackLayout>
             <Label
                 Grid.Row="1"

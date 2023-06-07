@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Electronic_goods.Models;
+using Electronic_goods.TabbedPages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -24,6 +26,13 @@ namespace Electronic_goods
         private async void RegistrationPageBtn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegistrationPage());
+        }
+
+        private async void GuestAuthBtn_Clicked(object sender, EventArgs e)
+        {
+            var cl = new Client("Гость", "", "", "", "", "1", "1", 2);
+            App.client = cl;
+            await Navigation.PushModalAsync(new NavigationPage(new Page1()));
         }
     }
 }

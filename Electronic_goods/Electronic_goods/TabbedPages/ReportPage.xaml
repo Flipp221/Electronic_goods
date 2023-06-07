@@ -8,7 +8,7 @@
             <Label
                 Padding="20"
                 FontSize="24"
-                Text="Отчёт"
+                Text="История"
                 TextColor="#887D7D" />
         </StackLayout>
         <StackLayout>
@@ -44,7 +44,7 @@
                                                 <Label
                                                 Margin="0,10"
                                                 FontSize="20"
-                                                Text="Приобрел:"
+                                                Text="Заказал:"
                                                 TextColor="#6D6D6D" />
                                                 <Label
                                                 Margin="0,10"
