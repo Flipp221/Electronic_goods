@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Electronic_goods.Models;
+using Electronic_goods.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -150,6 +152,14 @@ namespace Electronic_goods.TabbedPages
         private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Name.Contains(searchBar.Text));
+        }
+
+        private async void GoodsFilterLstView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var d = (Tovars)e.Item;
+            var a = new InfoTovarsPage(d);
+            a.BindingContext = d;
+            await Navigation.PushAsync(a);
         }
     }
 }

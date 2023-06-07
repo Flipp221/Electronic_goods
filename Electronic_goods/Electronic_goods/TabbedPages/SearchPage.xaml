@@ -101,6 +101,7 @@
                 x:Name="GoodsFilterLstView"
                 HasUnevenRows="True"
                 HorizontalOptions="StartAndExpand"
+                ItemTapped="GoodsFilterLstView_ItemTapped"
                 IsPullToRefreshEnabled="True"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
