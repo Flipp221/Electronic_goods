@@ -21,8 +21,8 @@ namespace Electronic_goods.Pages
         {
             InitializeComponent();
             AmountLbl.Text = $"Товары ({a}):";
-            SumLbl.Text = $"{b} P";
-            SumLbl1.Text = $"{b} P";
+            SumLbl.Text = $"{b} Pуб.";
+            SumLbl1.Text = $"{b} Pуб.";
             FIOEntry.Text = $"{App.client.Surname} {App.client.Name} {App.client.Patronymic}";
             BindingContext = App.client;
             

@@ -17,6 +17,7 @@ namespace Electronic_goods.TabbedPages
         public HomePage()
         {
             InitializeComponent();
+            TovarsNull();
             Update();
             GoodsLstViw.RefreshCommand = new Command(() =>
             {
@@ -46,6 +47,18 @@ namespace Electronic_goods.TabbedPages
                 AdminPanel.IsVisible = false;
             else if (App.client.RoleId == 1)
                 AdminPanel.IsVisible = true;
+        }
+        private void TovarsNull()
+        {
+            var fre = App.Db.GetTovars();
+
+            foreach (var item in fre)
+            {
+                if (App.client.RoleId == 1 && (Convert.ToInt32(item.Count) <= 3))
+                {
+                    DisplayAlert("Уведомление", $"Необходимо пополнить: {item.Name}, " + $" В магазине на данный момент их: {item.Count}", "Ok");
+                }
+            }
         }
 
         private void toolsBtn_Clicked(object sender, EventArgs e)

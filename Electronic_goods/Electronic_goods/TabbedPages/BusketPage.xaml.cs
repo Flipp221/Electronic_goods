@@ -45,7 +45,7 @@ namespace Electronic_goods.TabbedPages
             }
             BusketLst.ItemsSource = aa;
             GoodAmountLbl.Text = $"Товара ({aa.Count}):";
-            GoodPriceLbl.Text = $"{price} P";
+            GoodPriceLbl.Text = $"{price} Pуб.";
         }
 
         private void SwipeItem_Clicked(object sender, EventArgs e)
