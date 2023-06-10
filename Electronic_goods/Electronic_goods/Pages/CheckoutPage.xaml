@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electronic_goods.Pages.CheckoutPage"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
                  BackgroundColor="#F4F4FF"
     NavigationPage.HasNavigationBar="False"
     Visual="Material">
@@ -26,6 +27,44 @@
                     FontSize="24"
                     Text="Оформление заказа"
                     TextColor="#887D7D" />
+            </StackLayout>
+            <StackLayout>
+                <ListView
+                x:Name="BusketLst"
+                HasUnevenRows="True"
+                HorizontalOptions="StartAndExpand"
+                IsPullToRefreshEnabled="True"
+                SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Frame CornerRadius="20">
+                                        <StackLayout Orientation="Horizontal">
+                                            <ff:CachedImage
+                                                HeightRequest="100"
+                                                Source="{Binding ImagePath}"
+                                                WidthRequest="100" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout HorizontalOptions="FillAndExpand">
+                                                    <Label
+                                                    FontSize="17"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding Name}"
+                                                    TextColor="#6D6D6D" />
+                                                    <Label
+                                                    FontSize="15"
+                                                    Text="{Binding Description}"
+                                                    TextColor="#9A9A9A" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
             <ScrollView>
                 <StackLayout>
@@ -106,6 +145,7 @@
                                     TextColor="Black" />
                             </StackLayout>
                             <Button
+                                CommandParameter="{Binding Id}"
                                 x:Name="OrderBtn"
                                 Margin="80,0"
                                 BackgroundColor="#66FCF1"

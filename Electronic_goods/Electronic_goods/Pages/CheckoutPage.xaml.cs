@@ -1,13 +1,15 @@
 ﻿using Android.Net;
 using Electronic_goods.Models;
+using GemBox.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,21 +18,44 @@ namespace Electronic_goods.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CheckoutPage : ContentPage
     {
-        Tovars tovars;
+        List<Tovars> aa = new List<Tovars>();
         public CheckoutPage(int a, int b)
         {
             InitializeComponent();
+            BusketLst.RefreshCommand = new Command(() =>
+            {
+                BusketLst.IsRefreshing = false;
+            });
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
             AmountLbl.Text = $"Товары ({a}):";
             SumLbl.Text = $"{b} Pуб.";
             SumLbl1.Text = $"{b} Pуб.";
             FIOEntry.Text = $"{App.client.Surname} {App.client.Name} {App.client.Patronymic}";
             BindingContext = App.client;
-            
         }
-
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            UpdateList();
+        }
+
+        void UpdateList()
+        {
+            aa = new List<Tovars>();
+            BusketLst.ItemsSource = null;
+            var a = App.Db.GetBasket();
+            foreach (var item in a)
+            {
+                if (App.client.Id == item.ClientId)
+                {
+                    aa.Add(App.Db.GetProjectItem(item.TovarsId));
+                }
+            }
+            BusketLst.ItemsSource = aa;
         }
         private async void OrderBtn_Clicked(object sender, EventArgs e)
         {

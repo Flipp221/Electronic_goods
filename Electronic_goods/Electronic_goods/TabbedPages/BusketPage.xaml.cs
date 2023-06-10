@@ -13,8 +13,8 @@ namespace Electronic_goods.TabbedPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BusketPage : ContentPage
     {
+        Busket busket;
         List<Tovars> aa = new List<Tovars>();
-        Tovars tovars;
         int price = 0;
         public BusketPage()
         {
@@ -73,6 +73,7 @@ namespace Electronic_goods.TabbedPages
 
         private async void OrderBtn_Clicked(object sender, EventArgs e)
         {
+
             if (App.client.RoleId == 2)
             {
                 await DisplayAlert("Error", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
