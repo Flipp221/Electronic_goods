@@ -1,5 +1,7 @@
 ﻿using Electronic_goods.Models;
 using GemBox.Spreadsheet;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -46,25 +48,18 @@ namespace Electronic_goods.Pages
             {
                 try
                 {
-                    var workbook = new ExcelFile();
-                    var worksheet = workbook.Worksheets.Add("Report");
-                    var fileName = "Report.xlsx";
-                    var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
+                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                    var data = App.Db.GetReportBasket();
+                    var fileName = "export.xlsx";
+                    var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fileName);
                     var file = new FileInfo(filePath);
                     if (file.Exists)
                     {
                         file.Delete();
                         file = new FileInfo(filePath);
                     }
-                    worksheet.Cells[1, 1].Value = "Наименование товара";
-                    worksheet.Cells[1, 2].Value = "Количество купленного товара";
-                    worksheet.Cells[1, 3].Value = "Дата покупки";
-                    worksheet.Cells[1, 4].Value = "Стоимость товара";
-                    worksheet.Cells[1, 5].Value = "ФИО покупателя";
-                    var row = 2;
                     var id = ((Button)sender).CommandParameter.ToString();
                     var fre = App.Db.GetTovars();
-
                     foreach (var item in fre)
                     {
                         if (item.Id == int.Parse(id))
@@ -77,23 +72,37 @@ namespace Electronic_goods.Pages
                             tovars.Material = material;
                             Busket bk = new Busket(1, App.client.Id, tovars.Id);
                             App.Db.SaveBasket(bk);
+                            BasketReport rep = new BasketReport(item.Name, item.Count,DateTime.Now,item.Price, $"{App.client.Surname} {App.client.Name} {App.client.Patronymic}");
+                            App.Db.SaveReportBasket(rep);
+                            using (var package = new ExcelPackage(file))
+                            {
+                                var worksheet = package.Workbook.Worksheets.Add("Data");
+                                worksheet.Cells[1, 1].Value = "Название";
+                                worksheet.Cells[1, 2].Value = "Количество";
+                                worksheet.Cells[1, 3].Value = "Дата покупки";
+                                worksheet.Cells[1, 4].Value = "Цена";
+                                worksheet.Cells[1, 5].Value = "ФИО покупателя";
+                                using (var range = worksheet.Cells[1, 1, 1, 5])
+                                {
+                                    range.Style.Font.Bold = true; range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                                    range.Style.Fill.BackgroundColor.SetColor(Color.LightGray);
+                                }
+                                var row = 2;
+                                foreach (var acc in data)
+                                {
+                                    worksheet.Cells[row, 1].Value = acc.Name.ToString();
+                                    worksheet.Cells[row, 2].Value = acc.Count.ToString();
+                                    worksheet.Cells[row, 3].Value = acc.Date.ToString();
+                                    worksheet.Cells[row, 4].Value = acc.Price.ToString();
+                                    worksheet.Cells[row, 5].Value = acc.FIO.ToString();
+                                    row++;
+                                }
+                                worksheet.Cells.AutoFitColumns();
+                                file = new FileInfo("/storage/emulated/0/Download/ReportBusket.xlsx");
+                                package.SaveAs(file);
+                            }
                             await DisplayAlert("Done", "Товар успешно добавлен", "Ok");
                             await Navigation.PopAsync();
-                            if (item.Id == int.Parse(id))
-                            {
-                                worksheet.Cells[row, 1].Value = item.Name.ToString();
-                                worksheet.Cells[row, 2].Value = item.Count.ToString();
-                                worksheet.Cells[row, 3].Value = DateTime.Now;
-                                worksheet.Cells[row, 4].Value = item.Price.ToString();
-                                worksheet.Cells[row, 5].Value = $"{App.client.Surname} {App.client.Name} {App.client.Patronymic}    ";
-                                row++;
-                                worksheet.Cells.AutoFitColumnWidth();
-
-                                
-                                file = new FileInfo("/storage/emulated/0/Download/Report.xlsx");
-                                workbook.Save(file.ToString());                           
-                                return;
-                            }
                         }
                     }
                 }

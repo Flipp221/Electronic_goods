@@ -21,6 +21,7 @@ namespace Electronic_goods.Db
             db.CreateTable<Review>();
             db.CreateTable<ImproveOffer>();
             db.CreateTable<Report>();
+            db.CreateTable<BasketReport>();
         }
         public IEnumerable<Tovars> GetTovars()
         {
@@ -50,6 +51,10 @@ namespace Electronic_goods.Db
         {
             return db.Table<Report>();
         }
+        public IEnumerable<BasketReport> GetReportBasket()
+        {
+            return db.Table<BasketReport>();
+        }
 
         public int DeleteTovarsInBasket(int id) { return db.Delete<Busket>(id); }
         public int DeleteRewiws(int id) { return db.Delete<Review>(id); }
@@ -58,6 +63,18 @@ namespace Electronic_goods.Db
         public int DeleteReports(int id) { return db.Delete<Report>(id); }
 
         public int SaveTovars(Tovars projectModel)
+        {
+            if (projectModel.Id != 0)
+            {
+                db.Update(projectModel);
+                return projectModel.Id;
+            }
+            else
+            {
+                return db.Insert(projectModel);
+            }
+        }
+        public int SaveReportBasket(BasketReport projectModel)
         {
             if (projectModel.Id != 0)
             {
