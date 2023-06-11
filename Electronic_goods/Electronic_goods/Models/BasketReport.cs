@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Electronic_goods.Models
 {
-    [Table("basketreports")]
+    [Table("basketrepor")]
     public class BasketReport
     {
         public BasketReport()
