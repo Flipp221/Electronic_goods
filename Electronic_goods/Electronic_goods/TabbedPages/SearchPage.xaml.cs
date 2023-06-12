@@ -45,7 +45,7 @@ namespace Electronic_goods.TabbedPages
             MaterialBoxVw.IsVisible = true;
             string result = await DisplayActionSheet("Выберите материал:", null, null, App.materials);
 
-            switch (result)
+            switch (result)        
             {
                 case "Алюминий":
                     GoodsFilterLstView.ItemsSource = App.Db.GetTovars().Select(f => f).Where(x => x.Material == App.materials[0]);

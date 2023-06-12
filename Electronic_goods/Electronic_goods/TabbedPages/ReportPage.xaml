@@ -4,13 +4,42 @@
              x:Class="Electronic_goods.TabbedPages.ReportPage"
              BackgroundColor="#F4F4FF">
     <StackLayout>
-        <StackLayout BackgroundColor="White">
+        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
             <Label
-                Padding="20"
-                FontSize="24"
-                Text="История"
-                TextColor="#887D7D" />
+                        Padding="20"
+                        FontSize="24"
+                        Text="История"
+                        TextColor="#887D7D" />
+            <StackLayout
+                        x:Name="AdminPanel"
+                        Margin="0,0,25,0"
+                        HorizontalOptions="EndAndExpand"
+                        Orientation="Horizontal">
+                <Label
+                            FontFamily="MaterialIconsFont"
+                            FontSize="Title"
+                            HorizontalOptions="EndAndExpand"
+                            Text="menu"
+                            TextColor="#887D7D"
+                            VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
         </StackLayout>
+        <Frame
+                    Margin="20,0,20,20"
+                    Padding="0"
+                    CornerRadius="7">
+            <SearchBar
+                        x:Name="searchBar"
+                        IsSpellCheckEnabled="True"
+                        Placeholder="Search"
+                        PlaceholderColor="#DBDBDB"
+                        TextChanged="searchBar_TextChanged"
+                        TextColor="Gray" />
+        </Frame>
         <StackLayout>
             <ListView
                 x:Name="ReportLst"
