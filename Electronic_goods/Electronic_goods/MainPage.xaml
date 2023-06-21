@@ -48,7 +48,7 @@
                     TextColor="white"
                     Clicked="RegistrationPageBtn_Clicked"
                     CornerRadius="27"
-                    Text="Зарегестрироваться" />
+                    Text="Зарегистрироваться" />
                 <Button
                     x:Name="GuestAuthBtn"
                     Padding="0,10"
@@ -56,7 +56,7 @@
                     TextColor="white"
                     Clicked="GuestAuthBtn_Clicked"
                     CornerRadius="27"
-                    Text="Войти от гостя" />
+                    Text="Войти без авторизации" />
             </StackLayout>
             <Label
                 Grid.Row="1"

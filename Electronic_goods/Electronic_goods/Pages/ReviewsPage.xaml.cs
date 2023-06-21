@@ -98,7 +98,7 @@ namespace Electronic_goods.Pages
                         
                     }
                 }
-                DisplayAlert("Done!", "Отзыв удалён!", "ok");
+                DisplayAlert("Уведомление", "Отзыв удалён!", "ok");
                 Update();
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace Electronic_goods.Pages
         {
             if (App.client.RoleId == 2)
             {
-                await DisplayAlert("Error", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
+                await DisplayAlert("Ошибка", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
             }
             else
             {

@@ -31,7 +31,7 @@ namespace Electronic_goods
             }
             else
                 if (!await CheckLogin())
-                await DisplayAlert("Error", "Неправильный пароль или логин", "Ok");
+                await DisplayAlert("Ошибка", "Неправильный пароль или логин", "Продолжить");
         }
         private async Task<bool> CheckLogin()
         {

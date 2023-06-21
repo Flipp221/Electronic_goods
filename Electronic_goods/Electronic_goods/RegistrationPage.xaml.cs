@@ -53,7 +53,7 @@ namespace Electronic_goods
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", "Не удалось зарегистрироваться " + ex.Message, "Ok");
+                await DisplayAlert("Ошибка", "Не удалось зарегистрироваться " + ex.Message, "Продолжить");
             }
         }
     }

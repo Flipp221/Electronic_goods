@@ -140,6 +140,13 @@
                                                 FontSize="20"
                                                 Text="{Binding Count}"
                                                 TextColor="Black" />
+                                            <StackLayout>
+                                                <Label
+                                                Margin="20,-62,0,40"
+                                                FontSize="20"
+                                                Text="Шт."
+                                                TextColor="Black" />
+                                            </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

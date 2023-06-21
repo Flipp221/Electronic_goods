@@ -37,11 +37,11 @@ namespace Electronic_goods.Pages
         {
             if (tovars.Count == 0.ToString())
             {
-                await DisplayAlert("Error", "В данный момент товар отсутствует в магазине", "Ok");
+                await DisplayAlert("Ошибка", "В данный момент товар отсутствует в магазине", "Ok");
             }
             if (App.client.RoleId == 2)
             {
-                await DisplayAlert("Error", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
+                await DisplayAlert("Ошибка", "Вы не можете совершать покупки, пожалуйста войдите или зарегестрируйтесь", "Ok");
             }
             else
             {
@@ -63,7 +63,7 @@ namespace Electronic_goods.Pages
                             App.Db.SaveBasket(bk);
                             BasketReport rep = new BasketReport(item.Name, item.Count,DateTime.Now,item.Price, $"{App.client.Surname} {App.client.Name} {App.client.Patronymic}");
                             App.Db.SaveReportBasket(rep);
-                            await DisplayAlert("Done", "Товар успешно добавлен", "Ok");
+                            await DisplayAlert("Уведомление", "Товар успешно добавлен", "Ok");
                             await Navigation.PopAsync();
                         }
                     }
@@ -88,7 +88,7 @@ namespace Electronic_goods.Pages
         private async void deleteBtn_Tapped(object sender, EventArgs e)
         {
             App.Db.DeleteTovars(tovars.Id);
-            await DisplayAlert("Done", "Товар удалён", "Ok");
+            await DisplayAlert("Уведомление", "Товар удалён", "Ok");
             await Navigation.PopAsync();
         }
     }

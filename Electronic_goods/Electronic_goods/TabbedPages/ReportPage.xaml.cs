@@ -87,7 +87,7 @@ namespace Electronic_goods.TabbedPages
                     worksheet.Cells[1, 3].Value = "Дата покупки";
                     worksheet.Cells[1, 4].Value = "Цена";
                     worksheet.Cells[1, 5].Value = "ФИО покупателя";
-                    worksheet.Cells[20, 1].Value = "Количество проданного товара:";
+                    worksheet.Cells[20, 1].Value = "Итого:";
                     worksheet.Cells[20, 3].Value = "Шт";
                     worksheet.Cells[20, 5].Value = "Руб.";
                     using (var range = worksheet.Cells[1, 1, 1, 5])
@@ -118,7 +118,7 @@ namespace Electronic_goods.TabbedPages
             }
             catch (Exception ex)
             {
-                await DisplayAlert("error", ex.Message.ToString(), "ok");
+                await DisplayAlert("Ошибка", ex.Message.ToString(), "ok");
 
             }
         }

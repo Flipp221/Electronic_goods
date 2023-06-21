@@ -56,7 +56,7 @@
                                                     Text="{Binding Price}"
                                                     TextColor="#D37C7E" />
                                                 <Label
-                                                    Margin="60,-33"
+                                                    Margin="60,-33,0,20"
                                                     FontSize="20"
                                                     Text="Руб."
                                                     TextColor="#D37C7E" />
