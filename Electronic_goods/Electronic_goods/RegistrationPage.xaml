@@ -89,7 +89,7 @@
             CornerRadius="20"
             FontSize="18"
             HorizontalOptions="CenterAndExpand"
-            Text="Registration"
+            Text="Зарегистрироваться"
             TextTransform="None"
             VerticalOptions="EndAndExpand" />
     </StackLayout>

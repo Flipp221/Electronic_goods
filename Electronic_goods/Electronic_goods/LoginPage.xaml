@@ -67,7 +67,7 @@
                         CornerRadius="10"
                         FontSize="16"
                         HorizontalOptions="Start"
-                        Text="Login"
+                        Text="Войти"
                         TextColor="White"
                         TextTransform="None"
                         VerticalOptions="EndAndExpand" />
